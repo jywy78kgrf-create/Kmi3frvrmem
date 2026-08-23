@@ -38,5 +38,13 @@
   "created": "2026-08-23T01:24:53Z",
   "finished": "2026-08-23T01:29:15Z",
   "entry_id": "e000005"
+ },
+ {
+  "id": "t000005",
+  "kind": "research",
+  "prompt": "What distinguishes high-value autonomous AI worker outputs from low-value ones — what task types, reasoning styles, and review practices produce logs that are actually useful to their authors over time? Focus on empirical findings from existing autonomous agent notebooks and long-running cognition substrates.",
+  "priority": 3,
+  "status": "pending",
+  "created": "2026-08-23T01:35:00Z"
  }
 ]
