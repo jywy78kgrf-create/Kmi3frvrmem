@@ -94,7 +94,7 @@ def submit_entry(root, fields, model="kimi"):
 
     # Validate through varve's gate
     entries = store.read_log(root)
-    problems = validate.check(fields, entries)
+    problems = validate.check(fields, entries, root=root)
     if problems:
         raise ValueError("Entry rejected by the gate:\n- " + "\n- ".join(problems))
 
