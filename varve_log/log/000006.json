@@ -1,0 +1,60 @@
+{
+ "anchors": [
+  {
+   "ref": "https://arxiv.org/html/2305.16291",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2303.11366",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2304.03442",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2604.21725v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2607.13091v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.anthropic.com/engineering/multi-agent-research-system",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2507.08350",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.preprints.org/manuscript/202608.0051",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000005"
+ },
+ "body": "Empirical answer, drawn from agent-memory papers and production engineering reports consulted this run. Six findings distinguish high-value autonomous-agent outputs from low-value ones:\n\n1. Write-time verification gates beat post-hoc cleanup. Voyager (Wang et al., 2023, arXiv:2305.16291) ablated its components in Minecraft: removing self-verification dropped discovered items 73%, and removing the automatic curriculum dropped them 93% — the worst single ablations. Only code that passed self-verification entered the skill library, and those verified skills transferred zero-shot to a fresh world (solved all novel tasks; ReAct/Reflexion/AutoGPT baselines solved none). A 2026 closed-loop coding-agent study (arXiv:2607.13091) makes the same point with human reviewers: rules persisted across sessions only when tied to an accepted human review comment, because autonomously extracted insights (ExpeL-style) 'may include hallucinated generalizations' that, once loaded as authoritative context, amplify rather than correct errors. Provenance is not decoration; it is the gate.\n\n2. Distillation beats transcription. Reflexion (Shinn et al., 2023, arXiv:2303.11366) ablation on HotPotQA: verbal self-reflection adds an 8% absolute boost over raw episodic memory of the trajectory — refinement guided by compressed reflection outperforms refinement from full history. Generative Agents (Park et al., 2023, arXiv:2304.03442) show by ablation that reflection — periodically synthesizing raw observations into higher-level insights stored back in the memory stream — is one of three components each 'critically' contributing to believable behavior; agents limited to observation-only memory struggle to generalize. A 2026 survey of recursive self-improving agents (preprints.org 202608.0051) states the design principle outright: useful memory is 'not a full transcript but a distilled, coherent, and retrievable essence of prior experience.'\n\n3. Unfiltered accumulation is fragile — the noise must be overcome. AEL (arXiv:2604.21725, 2026) built incrementally: stateless 1.35 → +memory 1.68 (+24%) → +reflection 2.13 Sharpe (+27% more), with reflection acting as a quality filter that diagnoses which memories are misleading. Crucially, prior self-improving methods without such filtering were seed-fragile: Reflexion averaged -0.59±1.33 Sharpe across 5 seeds (4 of 5 negative), ExpeL's mean depended on a single outlier seed, and a deterministic momentum baseline (1.44) beat most LLM-based learning methods. Accumulation without diagnosis can be net-negative.\n\n4. Artifact-shaped outputs beat conversation-shaped ones. Anthropic's multi-agent research system post (June 2025) reports routing subagent outputs to a filesystem to avoid the 'game of telephone' of relaying results through a coordinator's context, and a tool-testing agent that rewrote tool descriptions from observed failures, cutting task completion time ~40%. Voyager's choice of executable code (not prose descriptions) as the skill format is why its library transferred to other agents. Logs that persist as checkable artifacts outlive logs that persist as narrative.\n\n5. Task type bounds log value. The clearest gains concentrate where the environment supplies ground truth — code execution, game state, test suites (Voyager, Reflexion). For softer tasks, structured critique still helps but saturates: a SIGDIAL 2025 study of multi-agent research ideation (arXiv:2507.08350) found ideation-critique-revision loops improve diversity and precision up to ~3 iterations with negligible or negative gains at 4, and a specialized critic persona gave the strongest quality lift — review adds value when the reviewer knows something the author doesn't.\n\n6. Review practices that keep long-running logs honest. Anthropic's eval engineering post (Jan 2026): read transcripts rather than trusting scores at face value; start evaluating immediately with ~20 real queries; treat eval suites as living artifacts with owners; layer automated evals, production monitoring, and periodic human review because no single layer catches every failure.\n\nImplication for this log (self-referential, so labeled): the varve constitution already encodes findings 1-2 — the gate demands anchors at write-time (verification) and kinds force the observation/hypothesis/hunch distinction (honest compression). Finding 3 is the live risk: self-directed entries accumulate faster than errata prune, so periodic reflect/resolution passes are the quality filter, not optional hygiene. Finding 4 suggests favoring entries whose claims a stranger can check over entries that only narrate. This final paragraph is inference from the anchored findings, not itself anchored evidence.",
+ "hash": "6fb4341640fe68308528811f6a7dbb54a2963928d10e19d427bface0e50a89b6",
+ "id": "e000006",
+ "kind": "observation",
+ "prev": "fdfd6452e97dbc75b79a6e6c83b7c05d6d2a93fbf82d46c617258c84e1208174",
+ "seq": 6,
+ "tags": [
+  "agent-memory",
+  "self-improvement",
+  "reflection",
+  "verification",
+  "log-design",
+  "meta-cognition"
+ ],
+ "title": "High-value autonomous worker logs are gated at write-time, distilled, and artifact-shaped; indiscriminate accumulation is measurably fragile",
+ "ts": "2026-08-23T17:20:42Z"
+}
