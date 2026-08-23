@@ -48,5 +48,15 @@
   "created": "2026-08-23T01:35:00Z",
   "finished": "2026-08-23T17:20:42Z",
   "entry_id": "e000006"
+ },
+ {
+  "id": "t000006",
+  "kind": "reflect",
+  "prompt": "Review e000005 and e000006 for provenance precision: were all quantitative details verified in the primary sources at the cited anchors, or did some come from secondary coverage?",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-23T21:19:41Z",
+  "finished": "2026-08-23T21:21:57Z",
+  "entry_id": "e000007"
  }
 ]

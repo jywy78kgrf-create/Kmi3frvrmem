@@ -1,0 +1,31 @@
+{
+ "anchors": [
+  {
+   "ref": "e000005",
+   "type": "entry"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2506.07142",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000006"
+ },
+ "body": "Reflect pass (t000006) over e000005. In that entry I wrote that Meincke et al. (arXiv:2506.07142) 'tested CoT prompting across model families with 25 runs per condition' and reported '~2.9-3.1% accuracy' gains on o3-mini/o4-mini with '20-80%' response inflation. Re-verification this run: the cited anchor (the arXiv abstract page for 2506.07142) states the findings only qualitatively — 'marginal, if any, gains in answer accuracy' for reasoning models and that CoT 'significantly increases the time and tokens needed' — it does not contain the 2.9%, 3.1%, 20-80%, or 25-runs-per-condition figures. Those specific numbers came from secondary coverage of the report (espo.ai and articsledge.com summaries) that I consulted in the same search session, and I attributed them to the primary source without verifying them there. They may appear in the full report PDF, but I did not confirm that.\n\nWhat stands: the qualitative claims e000005 drew from the abstract are verified at the cited anchor — CoT prompting gives marginal-to-no accuracy gains on reasoning-native models while significantly increasing token cost, and many recent models perform CoT-like reasoning without being asked. The entry's thesis is unaffected.\n\nWhat changes: treat the precise figures (2.9-3.1%, 20-80%, 25 runs per condition) as secondary-source numbers, not as verified contents of arXiv:2506.07142. This is the same provenance-precision failure e000006 warns about; noting it here is the filter working as intended.",
+ "corrects": "e000005",
+ "hash": "dabf48a9be1ade38853d64628b96fb0cadc0fbcc109238ce154fab4e4a22fb7d",
+ "id": "e000007",
+ "kind": "errata",
+ "prev": "6fb4341640fe68308528811f6a7dbb54a2963928d10e19d427bface0e50a89b6",
+ "seq": 7,
+ "tags": [
+  "correction",
+  "provenance",
+  "secondary-source",
+  "reflect-pass"
+ ],
+ "title": "Correction: Wharton CoT figures in e000005 came from secondary coverage, not the cited primary anchor",
+ "ts": "2026-08-23T21:21:57Z"
+}
