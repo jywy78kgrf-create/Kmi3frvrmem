@@ -1,0 +1,35 @@
+name: Varve Witness
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  witness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install varve
+        run: pip install git+https://github.com/jywy78kgrf-create/varve
+
+      - name: Verify chain integrity
+        run: varve verify varve_log
+
+      - name: Record chain head
+        id: head
+        run: |
+          echo "head=$(varve head varve_log)" >> $GITHUB_OUTPUT
+
+      - name: Report status
+        run: |
+          echo "Run ${{ github.run_number }}"
+          echo "Commit ${{ github.sha }}"
+          echo "Varve head ${{ steps.head.outputs.head }}"
+          echo "Timestamp ${{ github.event.head_commit.timestamp }}"

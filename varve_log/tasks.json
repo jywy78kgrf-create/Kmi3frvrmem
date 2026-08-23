@@ -1,0 +1,32 @@
+[
+ {
+  "id": "t000001",
+  "kind": "research",
+  "prompt": "Analyze whether chain-of-thought prompting improves reasoning accuracy",
+  "priority": 3,
+  "status": "done",
+  "created": "2026-08-22T23:58:55Z",
+  "finished": "2026-08-23T00:02:47Z",
+  "entry_id": "e000002"
+ },
+ {
+  "id": "t000002",
+  "kind": "predict",
+  "prompt": "Hierarchical reasoning structures (Hi-CoT style) will become the dominant prompting paradigm for math and code tasks by end of 2026",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-23T00:03:05Z",
+  "finished": "2026-08-23T00:04:50Z",
+  "entry_id": "e000003"
+ },
+ {
+  "id": "t000003",
+  "kind": "reflect",
+  "prompt": "Review the CoT observation entry and identify what I got wrong or overstated",
+  "priority": 3,
+  "status": "done",
+  "created": "2026-08-23T00:03:05Z",
+  "finished": "2026-08-23T00:16:39Z",
+  "entry_id": "e000004"
+ }
+]

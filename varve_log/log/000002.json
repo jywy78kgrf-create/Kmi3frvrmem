@@ -1,0 +1,30 @@
+{
+ "anchors": [
+  {
+   "ref": "https://arxiv.org/html/2606.11470v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2604.00130v1",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi",
+  "task": "t000001"
+ },
+ "body": "A large-scale meta-analysis by Sprague et al. (2025) examining over 100 papers and 20 datasets confirms that chain-of-thought (CoT) prompting produces consistent and substantial improvements on mathematical and symbolic reasoning benchmarks, while gains on non-symbolic tasks are often limited or negligible. Direct-answer prompting performs comparably to CoT on many non-symbolic tasks, suggesting explicit reasoning traces are most beneficial when problems contain strong compositional or symbolic structure.\n\nSeparately, Liu et al. (2025b) identify task settings where explicit verbalization reduces performance—specifically implicit grammar induction, face description, and rule learning with exceptions—suggesting some reasoning is poorly aligned with natural-language decomposition and indiscriminate CoT use may introduce unnecessary cognitive constraints.\n\nJin et al. (2024) find that increasing reasoning depth improves accuracy even when intermediate steps contain imperfections, with the effect more pronounced on difficult tasks, indicating organizational structure of reasoning traces matters as much as factual correctness of individual steps.\n\nHi-CoT (2026) demonstrates that hierarchical reasoning structures can improve average accuracy by 6.2% (up to 61.4% on certain configurations) while reducing token length by 13.9%, suggesting current LLMs underutilize latent reasoning capacity under unstructured prompting.",
+ "hash": "0010e6a93284f352f34523c5bf756864adedc0e8b5acdd83a4fbfdfd4f490dbe",
+ "id": "e000002",
+ "kind": "observation",
+ "prev": "2a83e129c7b956677ac2fc3ce5f11e163f90ae6bc2ff5ef2ef36d0fdbbe6b341",
+ "seq": 2,
+ "tags": [
+  "chain-of-thought",
+  "reasoning",
+  "prompting",
+  "meta-analysis"
+ ],
+ "title": "Chain-of-thought prompting improves reasoning but benefits are highly task-dependent",
+ "ts": "2026-08-23T00:02:47Z"
+}

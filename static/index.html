@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loam — Persistent Substrate for AI Cognition</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --bg-elevated: #161b22;
+            --bg-card: #1c2128;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-dim: #1f6feb;
+            --success: #3fb950;
+            --warning: #d29922;
+            --danger: #f85149;
+            --info: #a371f7;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+        }
+        .brand h1 { font-size: 24px; font-weight: 600; }
+        .brand p { color: var(--text-muted); font-size: 13px; margin-top: -4px; }
+        
+        .worker-status {
+            display: flex; align-items: center; gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        .worker-status .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--text-muted);
+        }
+        .worker-status.running .dot { background: var(--success); box-shadow: 0 0 8px var(--success); }
+        
+        /* Navigation */
+        nav {
+            display: flex; gap: 4px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        nav button {
+            background: none; border: none;
+            color: var(--text-muted); padding: 12px 20px;
+            cursor: pointer; font-size: 14px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        nav button:hover { color: var(--text); }
+        nav button.active { color: var(--accent); border-bottom-color: var(--accent); }
+        
+        /* Cards & Grid */
+        .grid { display: grid; gap: 20px; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        
+        @media (max-width: 1000px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+        
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .card h3 {
+            font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+            color: var(--text-muted); margin-bottom: 12px;
+        }
+        
+        .stat-value {
+            font-size: 36px; font-weight: 700; color: var(--accent);
+        }
+        
+        .stat-label { color: var(--text-muted); font-size: 13px; }
+        
+        /* Tables & Lists */
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; padding: 10px; color: var(--text-muted); font-size: 12px; text-transform: uppercase; }
+        td { padding: 12px 10px; border-top: 1px solid var(--border); font-size: 14px; }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+        
+        .badge {
+            display: inline-block; padding: 2px 8px;
+            border-radius: 12px; font-size: 11px; font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-pending { background: rgba(217, 160, 50, 0.15); color: var(--warning); }
+        .badge-running { background: rgba(88, 166, 255, 0.15); color: var(--accent); }
+        .badge-completed { background: rgba(63, 185, 80, 0.15); color: var(--success); }
+        .badge-failed { background: rgba(248, 81, 73, 0.15); color: var(--danger); }
+        .badge-insight { background: rgba(163, 113, 247, 0.15); color: var(--info); }
+        .badge-fact { background: rgba(88, 166, 255, 0.15); color: var(--accent); }
+        .badge-pattern { background: rgba(63, 185, 80, 0.15); color: var(--success); }
+        .badge-failure { background: rgba(248, 81, 73, 0.15); color: var(--danger); }
+        .badge-hypothesis { background: rgba(217, 160, 50, 0.15); color: var(--warning); }
+        
+        .priority-dot {
+            display: inline-block; width: 8px; height: 8px;
+            border-radius: 50%; margin-right: 6px;
+        }
+        .priority-4 { background: var(--danger); }
+        .priority-3 { background: var(--warning); }
+        .priority-2 { background: var(--accent); }
+        .priority-1 { background: var(--text-muted); }
+        
+        /* Forms */
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+        input, textarea, select {
+            width: 100%; padding: 10px 12px;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text); font-size: 14px;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none; border-color: var(--accent);
+        }
+        textarea { min-height: 100px; resize: vertical; }
+        
+        button.btn {
+            padding: 10px 20px;
+            background: var(--accent-dim); color: white;
+            border: none; border-radius: 8px;
+            font-size: 14px; font-weight: 600; cursor: pointer;
+            transition: background 0.2s;
+        }
+        button.btn:hover { background: var(--accent); }
+        button.btn-secondary {
+            background: var(--bg-elevated); color: var(--text);
+            border: 1px solid var(--border);
+        }
+        button.btn-secondary:hover { background: var(--border); }
+        
+        /* Sections */
+        .section { display: none; }
+        .section.active { display: block; }
+        
+        .empty-state {
+            text-align: center; padding: 60px 20px;
+            color: var(--text-muted);
+        }
+        .empty-state-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+        
+        /* Digest */
+        .digest-content {
+            white-space: pre-wrap;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+        
+        /* Memory graph placeholder */
+        .graph-container {
+            height: 400px;
+            background: var(--bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-muted);
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .pulse { animation: pulse 2s infinite; }
+        
+        /* Toast */
+        .toast {
+            position: fixed; bottom: 20px; right: 20px;
+            padding: 12px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transform: translateY(100px);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+        .toast.show { transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="brand-icon">🧠</div>
+                <div>
+                    <h1>Loam</h1>
+                    <p>Persistent Substrate for AI Cognition</p>
+                </div>
+            </div>
+            <div class="worker-status" id="workerStatus">
+                <div class="dot"></div>
+                <span>Worker idle</span>
+            </div>
+        </header>
+        
+        <nav>
+            <button class="active" data-section="dashboard" onclick="showSection('dashboard')">Dashboard</button>
+            <button data-section="tasks" onclick="showSection('tasks')">Tasks</button>
+            <button data-section="memories" onclick="showSection('memories')">Memory</button>
+            <button data-section="predictions" onclick="showSection('predictions')">Predictions</button>
+            <button data-section="digests" onclick="showSection('digests')">Digests</button>
+            <button data-section="create" onclick="showSection('create')">+ New Task</button>
+        </nav>
+        
+        <!-- Dashboard -->
+        <div id="dashboard" class="section active">
+            <div class="grid grid-4" style="margin-bottom: 24px;">
+                <div class="card">
+                    <h3>Total Tasks</h3>
+                    <div class="stat-value" id="statTotalTasks">—</div>
+                    <div class="stat-label" id="statTaskBreakdown">—</div>
+                </div>
+                <div class="card">
+                    <h3>Memories</h3>
+                    <div class="stat-value" id="statTotalMemories">—</div>
+                    <div class="stat-label" id="statMemoryBreakdown">—</div>
+                </div>
+                <div class="card">
+                    <h3>Success Rate</h3>
+                    <div class="stat-value" id="statSuccessRate">—</div>
+                    <div class="stat-label">tasks completed / total</div>
+                </div>
+                <div class="card">
+                    <h3>Pending</h3>
+                    <div class="stat-value" id="statPending">—</div>
+                    <div class="stat-label">tasks in queue</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Recent Insights</h3>
+                    <div id="recentInsights">
+                        <div class="empty-state">
+                            <div class="empty-state-icon">💡</div>
+                            <p>No insights yet. Create a task to start learning.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Queue — Next Up</h3>
+                    <div id="pendingTasks">
+                        <div class="empty-state">
+                            <div class="empty-state-icon">📋</div>
+                            <p>No pending tasks. Queue is clear.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tasks -->
+        <div id="tasks" class="section">
+            <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+                <button class="btn" onclick="loadTasks()">Refresh</button>
+                <select id="taskFilter" onchange="loadTasks()" style="width: auto;">
+                    <option value="">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="running">Running</option>
+                    <option value="completed">Completed</option>
+                    <option value="failed">Failed</option>
+                </select>
+            </div>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasksTable"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Memories -->
+        <div id="memories" class="section">
+            <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+                <button class="btn" onclick="loadMemories()">Refresh</button>
+                <input type="text" id="memorySearch" placeholder="Search memories..." style="width: 300px;" onkeyup="if(event.key==='Enter') searchMemories()">
+                <select id="memoryCategory" onchange="loadMemories()" style="width: auto;">
+                    <option value="">All Categories</option>
+                    <option value="insight">Insight</option>
+                    <option value="fact">Fact</option>
+                    <option value="pattern">Pattern</option>
+                    <option value="failure">Failure</option>
+                    <option value="hypothesis">Hypothesis</option>
+                </select>
+            </div>
+            <div class="grid grid-2">
+                <div>
+                    <div id="memoriesList"></div>
+                </div>
+                <div>
+                    <div class="card">
+                        <h3>Knowledge Graph</h3>
+                        <div class="graph-container" id="graphContainer">
+                            <span>Graph visualization — select a memory to explore connections</span>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-top: 20px;">
+                        <h3>Add Memory</h3>
+                        <div class="form-group">
+                            <label>Content</label>
+                            <textarea id="newMemoryContent" placeholder="What did you learn?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="newMemoryCategory">
+                                <option value="insight">Insight</option>
+                                <option value="fact">Fact</option>
+                                <option value="pattern">Pattern</option>
+                                <option value="failure">Failure</option>
+                                <option value="hypothesis">Hypothesis</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tags (comma separated)</label>
+                            <input type="text" id="newMemoryTags" placeholder="ai, cognition, research">
+                        </div>
+                        <button class="btn" onclick="createMemory()">Save Memory</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Predictions -->
+        <div id="predictions" class="section">
+            <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+                <button class="btn" onclick="loadPredictions()">Refresh</button>
+                <button class="btn btn-secondary" onclick="showPredictionForm()">+ New Prediction</button>
+            </div>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Statement</th>
+                            <th>Confidence</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Brier</th>
+                            <th>Created</th>
+                        </tr>
+                    </thead>
+                    <tbody id="predictionsTable"></tbody>
+                </table>
+            </div>
+            
+            <div id="predictionForm" class="card" style="margin-top: 20px; display: none;">
+                <h3>Log a Prediction</h3>
+                <div class="form-group">
+                    <label>Statement</label>
+                    <input type="text" id="predStatement" placeholder="What do you predict will happen?">
+                </div>
+                <div class="form-group">
+                    <label>Confidence (0.0 - 1.0)</label>
+                    <input type="number" id="predConfidence" min="0" max="1" step="0.05" value="0.5">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input type="text" id="predCategory" placeholder="general">
+                </div>
+                <div class="form-group">
+                    <label>Evaluation Date</label>
+                    <input type="datetime-local" id="predDeadline">
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <button class="btn" onclick="createPrediction()">Save Prediction</button>
+                    <button class="btn btn-secondary" onclick="hidePredictionForm()">Cancel</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Digests -->
+        <div id="digests" class="section">
+            <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+                <button class="btn" onclick="generateDigest()">Generate Digest</button>
+                <button class="btn btn-secondary" onclick="loadDigests()">Refresh List</button>
+            </div>
+            <div class="grid grid-2">
+                <div>
+                    <h3 style="margin-bottom: 12px;">Digest History</h3>
+                    <div id="digestsList"></div>
+                </div>
+                <div>
+                    <div class="card" id="digestViewer">
+                        <h3>Latest Digest</h3>
+                        <div class="digest-content" id="digestContent">
+Select a digest to view...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Create Task -->
+        <div id="create" class="section">
+            <div class="card" style="max-width: 800px;">
+                <h2 style="margin-bottom: 20px;">Create New Task</h2>
+                <div class="form-group">
+                    <label>Title *</label>
+                    <input type="text" id="taskTitle" placeholder="What do you want to explore?">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="taskDescription" placeholder="Detailed instructions, context, or hypotheses..."></textarea>
+                </div>
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label>Task Type</label>
+                        <select id="taskType">
+                            <option value="research">Research</option>
+                            <option value="code">Code</option>
+                            <option value="analysis">Analysis</option>
+                            <option value="synthesis">Synthesis</option>
+                            <option value="prediction">Prediction</option>
+                            <option value="reflection">Reflection</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <select id="taskPriority">
+                            <option value="4">Critical</option>
+                            <option value="3" selected>High</option>
+                            <option value="2">Medium</option>
+                            <option value="1">Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Reasoning Style</label>
+                    <select id="taskReasoning">
+                        <option value="analytical">Analytical — Break down, examine evidence</option>
+                        <option value="creative">Creative — Explore possibilities, divergent</option>
+                        <option value="skeptical">Skeptical — Challenge assumptions, find flaws</option>
+                        <option value="exploratory">Exploratory — Map the space, identify unknowns</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Deadline (optional)</label>
+                    <input type="datetime-local" id="taskDeadline">
+                </div>
+                <div class="form-group">
+                    <label>Parameters (JSON)</label>
+                    <textarea id="taskParams" placeholder='{"queries": ["topic one", "topic two"]}' style="min-height: 60px; font-family: monospace;"></textarea>
+                </div>
+                <button class="btn" onclick="createTask()">Queue Task</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="toast" id="toast"></div>
+    
+    <script>
+        const API = '';
+        
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelector(`nav button[data-section="${id}"]`).classList.add('active');
+            
+            if (id === 'dashboard') loadDashboard();
+            if (id === 'tasks') loadTasks();
+            if (id === 'memories') loadMemories();
+            if (id === 'predictions') loadPredictions();
+            if (id === 'digests') loadDigests();
+        }
+        
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+        
+        async function get(url) {
+            const r = await fetch(API + url);
+            if (!r.ok) throw new Error(await r.text());
+            return r.json();
+        }
+        
+        async function post(url, body) {
+            const r = await fetch(API + url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            });
+            if (!r.ok) throw new Error(await r.text());
+            return r.json();
+        }
+        
+        async function del(url) {
+            const r = await fetch(API + url, { method: 'DELETE' });
+            if (!r.ok) throw new Error(await r.text());
+            return r.json();
+        }
+        
+        // Dashboard
+        async function loadDashboard() {
+            try {
+                const data = await get('/api/dashboard');
+                
+                document.getElementById('statTotalTasks').textContent = data.tasks.total;
+                document.getElementById('statTaskBreakdown').textContent = 
+                    `${data.tasks.completed} done · ${data.tasks.failed} failed`;
+                
+                document.getElementById('statTotalMemories').textContent = data.memories.total;
+                document.getElementById('statMemoryBreakdown').textContent = 
+                    `${data.memories.verified} verified · ${data.memories.disproven} disproven`;
+                
+                const rate = (data.tasks.success_rate * 100).toFixed(1);
+                document.getElementById('statSuccessRate').textContent = rate + '%';
+                document.getElementById('statPending').textContent = data.tasks.pending;
+                
+                // Recent insights
+                const insightsDiv = document.getElementById('recentInsights');
+                if (data.recent_insights && data.recent_insights.length > 0) {
+                    insightsDiv.innerHTML = data.recent_insights.map(i => `
+                        <div style="padding: 12px 0; border-bottom: 1px solid var(--border);">
+                            <span class="badge badge-${i.category}">${i.category}</span>
+                            <p style="margin-top: 6px; font-size: 14px;">${i.content}</p>
+                        </div>
+                    `).join('');
+                }
+                
+                // Pending tasks
+                const pendingDiv = document.getElementById('pendingTasks');
+                if (data.pending_tasks && data.pending_tasks.length > 0) {
+                    pendingDiv.innerHTML = data.pending_tasks.map(t => `
+                        <div style="padding: 12px 0; border-bottom: 1px solid var(--border);">
+                            <span class="priority-dot priority-${t.priority}"></span>
+                            <span style="font-size: 14px;">${t.title}</span>
+                        </div>
+                    `).join('');
+                }
+                
+                // Worker status
+                const ws = await get('/api/worker/status');
+                const wsEl = document.getElementById('workerStatus');
+                wsEl.classList.toggle('running', ws.running);
+                wsEl.querySelector('span').textContent = ws.running 
+                    ? (ws.current_task ? `Processing task #${ws.current_task}` : 'Worker running')
+                    : 'Worker idle';
+                
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        
+        // Tasks
+        async function loadTasks() {
+            try {
+                const filter = document.getElementById('taskFilter').value;
+                const url = filter ? `/api/tasks?status=${filter}` : '/api/tasks';
+                const tasks = await get(url);
+                
+                const tbody = document.getElementById('tasksTable');
+                if (tasks.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-muted)">No tasks found</td></tr>';
+                    return;
+                }
+                
+                tbody.innerHTML = tasks.map(t => `
+                    <tr>
+                        <td>#${t.id}</td>
+                        <td><strong>${escapeHtml(t.title)}</strong></td>
+                        <td>${t.task_type}</td>
+                        <td><span class="priority-dot priority-${t.priority}"></span>${t.priority}</td>
+                        <td><span class="badge badge-${t.status}">${t.status}</span></td>
+                        <td>${new Date(t.created_at).toLocaleDateString()}</td>
+                        <td>${t.result_summary ? escapeHtml(t.result_summary.substring(0, 60)) + '...' : '—'}</td>
+                    </tr>
+                `).join('');
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        
+        async function createTask() {
+            try {
+                const paramsStr = document.getElementById('taskParams').value;
+                const task = {
+                    title: document.getElementById('taskTitle').value,
+                    description: document.getElementById('taskDescription').value,
+                    task_type: document.getElementById('taskType').value,
+                    priority: parseInt(document.getElementById('taskPriority').value),
+                    reasoning_style: document.getElementById('taskReasoning').value,
+                    deadline: document.getElementById('taskDeadline').value || null,
+                    parameters: paramsStr ? JSON.parse(paramsStr) : {}
+                };
+                
+                await post('/api/tasks', task);
+                showToast('Task queued successfully');
+                
+                // Clear form
+                document.getElementById('taskTitle').value = '';
+                document.getElementById('taskDescription').value = '';
+                document.getElementById('taskParams').value = '';
+                
+                showSection('tasks');
+            } catch (e) {
+                showToast('Error: ' + e.message);
+            }
+        }
+        
+        // Memories
+        async function loadMemories() {
+            try {
+                const category = document.getElementById('memoryCategory').value;
+                const url = category ? `/api/memories?category=${category}` : '/api/memories';
+                const memories = await get(url);
+                
+                const div = document.getElementById('memoriesList');
+                if (memories.length === 0) {
+                    div.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🧠</div><p>No memories yet.</p></div>';
+                    return;
+                }
+                
+                div.innerHTML = memories.map(m => `
+                    <div class="card" style="margin-bottom: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                            <span class="badge badge-${m.category}">${m.category}</span>
+                            <span style="color: var(--text-muted); font-size: 12px;">conf: ${m.confidence}</span>
+                        </div>
+                        <p style="font-size: 14px; margin-bottom: 8px;">${escapeHtml(m.content)}</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            ${(m.tags || []).map(t => `<span style="font-size: 11px; color: var(--accent); background: rgba(88,166,255,0.1); padding: 2px 8px; border-radius: 12px;">#${t}</span>`).join('')}
+                        </div>
+                        <div style="margin-top: 8px; font-size: 12px; color: var(--text-muted);">
+                            ${new Date(m.created_at).toLocaleString()}
+                            ${m.verified === 1 ? ' ✓ verified' : m.verified === -1 ? ' ✗ disproven' : ''}
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        
+        async function searchMemories() {
+            const q = document.getElementById('memorySearch').value;
+            if (!q) { loadMemories(); return; }
+            try {
+                const memories = await get(`/api/memories?q=${encodeURIComponent(q)}`);
+                const div = document.getElementById('memoriesList');
+                div.innerHTML = memories.map(m => `
+                    <div class="card" style="margin-bottom: 12px;">
+                        <span class="badge badge-${m.category}">${m.category}</span>
+                        <p style="font-size: 14px; margin-top: 8px;">${escapeHtml(m.content)}</p>
+                    </div>
+                `).join('');
+            } catch (e) { console.error(e); }
+        }
+        
+        async function createMemory() {
+            try {
+                const tags = document.getElementById('newMemoryTags').value
+                    .split(',').map(t => t.trim()).filter(t => t);
+                
+                await post('/api/memories', {
+                    content: document.getElementById('newMemoryContent').value,
+                    category: document.getElementById('newMemoryCategory').value,
+                    tags: tags,
+                    confidence: 0.7
+                });
+                showToast('Memory saved');
+                document.getElementById('newMemoryContent').value = '';
+                document.getElementById('newMemoryTags').value = '';
+                loadMemories();
+            } catch (e) {
+                showToast('Error: ' + e.message);
+            }
+        }
+        
+        // Predictions
+        async function loadPredictions() {
+            try {
+                const preds = await get('/api/predictions');
+                const tbody = document.getElementById('predictionsTable');
+                if (preds.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted)">No predictions logged</td></tr>';
+                    return;
+                }
+                
+                tbody.innerHTML = preds.map(p => `
+                    <tr>
+                        <td>${escapeHtml(p.statement)}</td>
+                        <td><strong>${(p.confidence * 100).toFixed(0)}%</strong></td>
+                        <td>${p.category}</td>
+                        <td>${p.resolved ? (p.resolution === 'correct' ? '✓' : '✗') : '⏳'}</td>
+                        <td>${p.brier_score !== null ? p.brier_score.toFixed(3) : '—'}</td>
+                        <td>${new Date(p.created_at).toLocaleDateString()}</td>
+                    </tr>
+                `).join('');
+            } catch (e) { console.error(e); }
+        }
+        
+        function showPredictionForm() {
+            document.getElementById('predictionForm').style.display = 'block';
+        }
+        function hidePredictionForm() {
+            document.getElementById('predictionForm').style.display = 'none';
+        }
+        
+        async function createPrediction() {
+            try {
+                await post('/api/predictions', {
+                    statement: document.getElementById('predStatement').value,
+                    confidence: parseFloat(document.getElementById('predConfidence').value),
+                    category: document.getElementById('predCategory').value || 'general',
+                    deadline: document.getElementById('predDeadline').value || null
+                });
+                showToast('Prediction logged');
+                hidePredictionForm();
+                loadPredictions();
+            } catch (e) {
+                showToast('Error: ' + e.message);
+            }
+        }
+        
+        // Digests
+        async function loadDigests() {
+            try {
+                const digests = await get('/api/digests');
+                const div = document.getElementById('digestsList');
+                if (digests.length === 0) {
+                    div.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📰</div><p>No digests yet. Generate one to start.</p></div>';
+                    return;
+                }
+                
+                div.innerHTML = digests.map(d => `
+                    <div class="card" style="margin-bottom: 12px; cursor: pointer; ${d.read ? '' : 'border-color: var(--accent);'}" onclick="viewDigest(${d.id})">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <strong>${new Date(d.period_start).toLocaleDateString()} — ${new Date(d.period_end).toLocaleDateString()}</strong>
+                            ${d.read ? '' : '<span class="badge badge-running">NEW</span>'}
+                        </div>
+                        <div style="margin-top: 8px; font-size: 13px; color: var(--text-muted);">
+                            ${d.tasks_completed} tasks · ${d.new_memories} memories · ${d.predictions_resolved} predictions
+                        </div>
+                        ${d.highlights.length > 0 ? `<div style="margin-top: 8px; font-size: 12px;">• ${d.highlights[0]}</div>` : ''}
+                    </div>
+                `).join('');
+                
+                // Auto-view latest
+                if (digests.length > 0) viewDigest(digests[0].id);
+            } catch (e) { console.error(e); }
+        }
+        
+        async function viewDigest(id) {
+            try {
+                const d = await get(`/api/digests/${id}`);
+                document.getElementById('digestContent').textContent = d.content;
+                await post(`/api/digests/${id}/read`);
+            } catch (e) { console.error(e); }
+        }
+        
+        async function generateDigest() {
+            try {
+                showToast('Generating digest...');
+                await post('/api/digests/generate', {});
+                showToast('Digest generated');
+                loadDigests();
+            } catch (e) {
+                showToast('Error: ' + e.message);
+            }
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Init
+        loadDashboard();
+        setInterval(loadDashboard, 5000);  // Refresh dashboard every 5s
+    </script>
+</body>
+</html>
