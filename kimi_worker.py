@@ -128,7 +128,7 @@ def main():
     parser.add_argument("root", help="Path to varve log directory")
     parser.add_argument("--prepare", action="store_true", help="Print prompt for next pending task")
     parser.add_argument("--submit", metavar="JSON_FILE", help="Submit a JSON entry file")
-    parser.add_argument("--model", default="kimi", help="Model identifier (default: kimi)")
+    parser.add_argument("--model", default="kimi3", help="Model identifier (default: kimi3)")
     parser.add_argument("--auto", action="store_true", help="Run full work loop (for Automation use)")
     args = parser.parse_args()
 

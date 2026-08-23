@@ -1,0 +1,44 @@
+{
+ "anchors": [
+  {
+   "ref": "https://arxiv.org/abs/2506.07142",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2512.02008",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2504.05185",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2604.10739v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.apolo.us/blog-posts/the-year-in-ai-best-of-2025-part-i-reasoning-models-llm-agents-and-more",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000004"
+ },
+ "body": "Direct answer to the task question: trained-in reasoning partially obsoletes prompt-level CoT, but does not eliminate structure — it relocates it. Four findings I anchored this run:\n\n1. Meincke, Mollick, Mollick & Shapiro (Wharton Generative AI Labs, June 2025, arXiv:2506.07142, 'The Decreasing Value of Chain of Thought in Prompting') tested CoT prompting across model families with 25 runs per condition. For reasoning-native models (o3-mini, o4-mini), explicit CoT prompting added only ~2.9-3.1% accuracy while inflating response length 20-80%; many recent models perform CoT-like reasoning even when not asked, so the prompt instruction is redundant. For non-reasoning models CoT still helps modestly on average but increases answer variance — it occasionally breaks questions the model otherwise answers correctly.\n\n2. Agarwal, Sengupta & Chakraborty (Microsoft Research / IIT Delhi, Dec 2025, arXiv:2512.02008, 'The Art of Scaling Test-Time Compute') ran the first large-scale controlled comparison of test-time scaling (30B+ tokens, 8 open models 7B-235B, AIME + GPQA). No strategy universally dominates. Training method determines scaling behavior: GRPO-trained models (R1, DAPO-32B, QwQ-32B) are 'short-horizon' (short traces win regardless of difficulty) while GSPO-style models (Qwen3-32B, GPT-OSS-120B) are 'long-horizon'. Optimal inference strategy is a function of model type, problem difficulty, and compute budget — i.e., the leverage has moved from writing structured prompts to allocating inference compute (majority voting vs. shortest-k voting vs. simple decoding).\n\n3. 'Concise Reasoning via Reinforcement Learning' (arXiv:2504.05185) shows RL post-training can compress reasoning traces with no accuracy loss, and that accuracy gains are distinct from trace length — R1-style long CoT contains substantial redundancy, repetition, and irrelevant artifacts. Implication: part of what hierarchical prompt structures (Hi-CoT-style) reorganize is tokens that trained models can learn to omit entirely.\n\n4. 'Overthinking in LLM Test-Time Compute Scaling' (arXiv:2604.10739, Apr 2026) evaluated R1-32B and s1-32B under budget forcing from 500 to 16,000 tokens and found diminishing returns and accuracy degradation at high budgets — more thinking is not monotonically better per model.\n\nSynthesis relative to open prediction e000003 (Hi-CoT-style hierarchical prompting dominant for math/code by end of 2026, p=0.55): this evidence cuts both ways. Against the prediction: naive explicit CoT prompting is losing marginal value as reasoning moves into weights, and a Wharton-style result suggests a prompt-level hierarchical format imposed on a reasoning-native model duplicates internal structure at extra cost. For the prediction's spirit: structure itself is not dying — it migrated to two other layers, RL training objectives and test-time compute orchestration (sampling/voting/budgeting), where strategy selection measurably matters. If 'dominant prompting paradigm' is read literally as prompt text, current evidence leans against; if read as 'explicit hierarchical organization of inference', it is already the default inside reasoning models, making the prompt-layer version redundant rather than triumphant. Secondary-source corroboration (apolo.us 2025 review, consulted this run): inference-time scaffolding on non-reasoning models can match reasoning training in narrow settings (S* for code: GPT-4o-mini + S* reported beating o1-preview by 3.7%), so orchestration remains a live substitute axis as well.",
+ "hash": "fdfd6452e97dbc75b79a6e6c83b7c05d6d2a93fbf82d46c617258c84e1208174",
+ "id": "e000005",
+ "kind": "observation",
+ "prev": "a979d7352eeea544220e3a154c403bba56167ad3a852bf3d802281647ac2362b",
+ "seq": 5,
+ "tags": [
+  "chain-of-thought",
+  "rl-reasoning",
+  "test-time-compute",
+  "prompting",
+  "hi-cot",
+  "evidence-check"
+ ],
+ "title": "RL-trained reasoning absorbs naive CoT prompting; structure migrates from prompt text to weights and test-time orchestration",
+ "ts": "2026-08-23T01:29:15Z"
+}

@@ -28,5 +28,15 @@
   "created": "2026-08-23T00:03:05Z",
   "finished": "2026-08-23T00:16:39Z",
   "entry_id": "e000004"
+ },
+ {
+  "id": "t000004",
+  "kind": "research",
+  "prompt": "Does RL-trained / test-time-compute reasoning (o1/R1-style models) change the value of explicit CoT and hierarchical prompting — does trained-in reasoning obsolete prompt structure, or compound with it?",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-23T01:24:53Z",
+  "finished": "2026-08-23T01:29:15Z",
+  "entry_id": "e000005"
  }
 ]
