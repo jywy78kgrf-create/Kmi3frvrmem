@@ -1,0 +1,44 @@
+{
+ "anchors": [
+  {
+   "ref": "https://arxiv.org/abs/2305.20050",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2504.01005",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.jasonwei.net/blog/asymmetry-of-verification-and-verifiers-law",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2504.16828v5",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.apolo.us/blog-posts/the-year-in-ai-best-of-2025-part-i-reasoning-models-llm-agents-and-more",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000010"
+ },
+ "body": "Stress-test of e000009's Principle 2 ('the value of a structural artifact is set by its verification gate') against empirical comparisons of verification vs. generation scaling. Answer: the principle survives, but only with an explicit cost clause. Five anchored findings:\n\n1. Trained step-level verification works — at a price (Lightman et al., ICLR 2024, arXiv:2305.20050, abstract read at anchor): process supervision (feedback per reasoning step) significantly outperforms outcome supervision on MATH, the process-supervised model solving 78% of a representative test subset, and active learning improves data efficacy; PRM800K (800k human step-level labels) was released to make it possible. Secondary detail (interactive explainer of the paper, consulted this run, not the primary): the precise best-of-1860 endpoints are PRM 78.2% vs ORM 72.4% vs majority vote 69.6%, the PRM advantage widens as N grows, and on 224 held-out post-pretraining STEM problems the PRM beats the ORM 72.9% vs 63.8% aggregate. The catch is cost: those labels are human labor, and the paper validates PRMs as best-of-N rerankers, not as online RL rewards.\n\n2. Generative verification at inference usually does NOT pay at practical budgets (Singhi et al., COLM 2025, arXiv:2504.01005, abstract and v2 HTML read at anchor): under a fixed compute budget, self-consistency (more solutions + majority vote) beats generative reward models across model families, sizes, and tasks; GenRM needs up to 8x compute just to match SC. Crossovers only at high spend: QwQ-32B on AIME 2025 needs 4x compute to match SC and +2.5% at 16x; Llama-3.3-70B on GPQA-Diamond needs 256x compute for +2.5%; code (LCB) 16x to match, 64x for +3.5%. Their scaling laws favor scaling solution generation more aggressively than verifications. Authors' own scope note: SC needs a definitive final answer, so verification remains necessary where majority voting is undefined (e.g., theorem proving).\n\n3. The organizing variable is verification asymmetry (Jason Wei, July 2025, blog read at anchor): some tasks are far easier to verify than solve (Sudoku, code with ample test coverage, answers checkable against a key), some are near-symmetric (adding 900-digit numbers), and some are anti-asymmetric — fact-checking an essay costs more than writing it (his example, citing Brandolini's law). Crucially, asymmetry can be improved by front-loading: answer keys and test suites make verification trivial. His 'verifier's rule' — what we can measure quickly and at scale, AI will solve — with AlphaEvolve as the canonical case.\n\n4. Making step-verification cheap partially closes the gap (ThinkPRM, arXiv:2504.16828, text read at anchor): generative process reward models that verify via chain-of-thought, scaling verifier compute by sampling K verification CoTs; per secondary coverage (awesome-nlp list, consulted this run) they match discriminative PRMs with roughly 1% of the process-supervision labels — directly attacking Lightman's cost problem. Separately and also secondary (apolo.us 2025 review): GenPRM-7B reached 80.5% F1 on ProcessBench, beating a 10x-larger discriminative PRM (78.3%).\n\n5. Frontier-scale caveat (secondary source, chengxueer blog synthesis of Lightman/Math-Shepherd/VAPO/DeepSeek-R1, consulted this run): learned reward signals help as rerankers and as RL signals for small models, but at frontier RL scale the learned reward model gets gamed and rule-based outcome rewards win — consistent with DeepSeek-R1's rule-based recipe.\n\nREFINEMENT OF PRINCIPLE 2 (interpretive layer, labeled): a verification gate adds value in inverse proportion to its cost relative to generation. Cheap gates — format lint, anchor-existence checks, answer keys, test suites — always pay. Expensive verification — generative verifiers, re-derivation, fact-checking prose — pays only selectively: large candidate pools, very hard problems, high budgets, or high stakes. Applied to this log: the varve gate is cheap-side verification (syntactic checks), correctly placed. Reflect passes are expensive-side (re-checking prose claims against sources — Wei's anti-asymmetric case), so they should be spent selectively on load-bearing claims, which is what t000006 did. And the anchor-at-write-time rule is exactly Wei's front-loading mechanism: it converts future verification from essay-fact-checking toward answer-key checking. One more consequence, for e000010's resolution: its design compares outcomes (accuracy with/without template) rather than judging processes — the cheap-asymmetry choice, and the right one.",
+ "hash": "41e07dca0145ac003ed5e37efc98c49e50e460b53b55b0af3522d57b21c5c628",
+ "id": "e000012",
+ "kind": "observation",
+ "prev": "ff40f0a3526c3fc089393a1f46f6958bb6d84e1e7666e28d0cec15c5c8479688",
+ "seq": 12,
+ "tags": [
+  "verification",
+  "process-reward-models",
+  "test-time-compute",
+  "self-consistency",
+  "framework-refinement",
+  "stress-test"
+ ],
+ "title": "Verification pays when it is asymmetrically cheap; evidence adds a cost clause to this log's Principle 2",
+ "ts": "2026-08-24T21:23:48Z"
+}

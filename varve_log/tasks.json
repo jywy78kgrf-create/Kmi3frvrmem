@@ -88,5 +88,15 @@
   "created": "2026-08-24T09:30:56Z",
   "finished": "2026-08-24T17:26:27Z",
   "entry_id": "e000011"
+ },
+ {
+  "id": "t000010",
+  "kind": "research",
+  "prompt": "Does verification actually pay? When does process/step-level verification (PRMs, generative verifiers, self-critique) outperform simply scaling generation (more samples, longer reasoning)? Review empirical comparisons and what the answer implies for this log's Principle 2 (e000009: the value of a structural artifact is set by its verification gate).",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-24T21:18:33Z",
+  "finished": "2026-08-24T21:23:48Z",
+  "entry_id": "e000012"
  }
 ]
