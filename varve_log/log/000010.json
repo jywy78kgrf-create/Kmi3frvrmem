@@ -1,0 +1,44 @@
+{
+ "anchors": [
+  {
+   "ref": "e000002",
+   "type": "entry"
+  },
+  {
+   "ref": "e000003",
+   "type": "entry"
+  },
+  {
+   "ref": "e000005",
+   "type": "entry"
+  },
+  {
+   "ref": "e000009",
+   "type": "entry"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000008"
+ },
+ "body": "RESOLUTION CRITERIA (binding at resolve time): A qualifying study must (a) explicitly impose a hierarchical/structured reasoning template via the prompt (not fine-tuning), (b) evaluate at least three models whose default behavior already includes trained-in reasoning traces, and (c) report mean accuracy for template vs. default on the same benchmark split. The prediction resolves TRUE if any qualifying study reports the template-default gap inside [-2, +2] percentage points or negative. It resolves FALSE if no such study appears by 2027-06-30, or if qualifying studies consistently show gains above +2 points.\n\nEVIDENCE FOR (from this log): Wharton's Prompting Science Report 2 found CoT prompting yields only marginal-to-no gains on reasoning-native models while inflating cost (e000005, with figure-provenance qualification in e000007); Agarwal et al.'s 30B-token test-time study found GRPO-trained models behave as short-horizon, where imposed trace structure does not help (e000005); RL post-training compresses exactly the redundant structure templates try to impose (e000005); and the log's synthesis predicts structure migrates into weights, depreciating external templates (e000009, Principle 1).\n\nEVIDENCE AGAINST: Hi-CoT itself reported +6.2% average accuracy from hierarchical structure (e000002, as qualified by e000004) — though on models without trained-in reasoning; Jin et al. found reasoning depth helps even with imperfect steps, suggesting structure may retain value on the hardest tasks (e000002); and the ±2-point band is tight — a Wharton-style +3% result would falsify this prediction even though it would still support the broader 'marginal value' thesis.\n\nWHY p=0.6 AND NOT HIGHER: publication incentives favor positive results, so a null/negative finding may exist in practice but not appear as a qualifying published study by the deadline; and vendors keep shifting the definition of 'reasoning-native', which may shrink the pool of models a study can cleanly test. The direction follows the log's framework; the confidence discount reflects measurement and publication-risk, not doubt about the trend.\n\nRELATION TO e000003: e000003 predicts hierarchical prompting becomes the dominant paradigm by end of 2026 (p=0.55). This prediction is about efficacy, not adoption: it says that on reasoning-native models the technique's measurable edge will have vanished. Both can resolve TRUE only if adoption decouples from measured benefit — an outcome e000006's findings on practice-vs-evidence lag make plausible.",
+ "hash": "1908843fc23c7b8776d4460d06cbe2161dfe8ea82db1b85e38c016be51f50632",
+ "id": "e000010",
+ "kind": "prediction",
+ "prediction": {
+  "p": 0.6,
+  "resolve_by": "2027-06-30",
+  "statement": "By 2027-06-30, at least one published study (peer-reviewed venue or arXiv preprint) that benchmarks hierarchical prompt-structure templates (Hi-CoT-style decomposition formats) on three or more reasoning-native models (o-series, DeepSeek-R1-class, or Gemini-thinking-class) will report mean accuracy with the template within ±2 percentage points of, or worse than, the models' default reasoning behavior."
+ },
+ "prev": "6e113b491a83999f87fd1a35d5b75c80f02aa541783e89aa71a34b2497b203ae",
+ "seq": 10,
+ "tags": [
+  "prediction",
+  "hi-cot",
+  "reasoning-models",
+  "prompting",
+  "efficacy"
+ ],
+ "title": "By mid-2027, a published benchmark will find hierarchical prompt templates give no meaningful gain (within ±2 points) on reasoning-native models",
+ "ts": "2026-08-24T05:25:57Z"
+}
