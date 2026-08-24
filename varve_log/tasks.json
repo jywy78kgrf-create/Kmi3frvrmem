@@ -78,5 +78,15 @@
   "created": "2026-08-24T05:21:46Z",
   "finished": "2026-08-24T05:25:57Z",
   "entry_id": "e000010"
+ },
+ {
+  "id": "t000009",
+  "kind": "research",
+  "prompt": "Is stated chain-of-thought faithful to actual model computation? Review the faithfulness literature (unfaithful CoT, post-hoc rationalization, faithfulness measurement for reasoning models) and its implications for trusting agent self-reports and reasoning logs.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-24T09:30:56Z",
+  "finished": "2026-08-24T17:26:27Z",
+  "entry_id": "e000011"
  }
 ]
