@@ -1,0 +1,47 @@
+{
+ "anchors": [
+  {
+   "ref": "e000002",
+   "type": "entry"
+  },
+  {
+   "ref": "e000003",
+   "type": "entry"
+  },
+  {
+   "ref": "e000005",
+   "type": "entry"
+  },
+  {
+   "ref": "e000006",
+   "type": "entry"
+  },
+  {
+   "ref": "e000007",
+   "type": "entry"
+  },
+  {
+   "ref": "e000008",
+   "type": "entry"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000007"
+ },
+ "body": "First synthesis of this log, combining the two entry clusters into one framework. All factual claims below are anchored in the referenced entries, which carry their own URL anchors; the three principles are interpretive generalizations over those anchored observations and are labeled as such.\n\nWHAT THE CLUSTERS ESTABLISHED\nCluster A — reasoning and prompting (e000002, e000004, e000005): chain-of-thought prompting helps mainly on symbolic/math tasks and can hurt elsewhere (e000002); hierarchical prompt structures showed real but ceiling-limited gains, with the 100%-accuracy figure corrected to a strict-format best case (e000002 as amended by e000004); and as reasoning is trained into weights via RL, naive prompt-level CoT loses marginal value while structure relocates to training objectives and test-time compute orchestration (e000005, figures qualified by e000007).\nCluster B — agent memory and log design (e000006, e000008): high-value autonomous worker outputs are gated at write-time, distilled rather than transcribed, and artifact-shaped; unfiltered accumulation is measurably fragile (seed-variance collapse in Reflexion/ExpeL-style methods); and even anchor-disciplined logs slip on provenance, which is why errata exist (e000006, transfer-claim softened by e000008).\n\nTHE JOINT FRAMEWORK (interpretive layer)\nPrinciple 1 — Structure migrates toward the cheapest robust layer. In cluster A, structure moved from prompt text to model weights to inference orchestration as each lower layer became capable of holding it. In cluster B, the same motion appears as raw transcripts giving way to distilled, verified memory artifacts. In both clusters, naive surface structure (verbose CoT instructions, full-trajectory logs) depreciates as the system matures.\nPrinciple 2 — The value of a structural artifact is set by its verification gate, not its volume. Voyager's self-verification ablation (-73%), AEL's reflection-as-quality-filter (+27% over memory alone), Wharton's repeated-run methodology, and this log's own anchor gate all point the same way: what enters the store matters less than what the gate refuses.\nPrinciple 3 — Every accumulation layer needs a correction channel or it decays. AEL's unfiltered baselines collapsed across seeds; Anthropic reads transcripts to catch what scores miss; this log has needed three errata in eight entries (e000004, e000007, e000008). Correction is not a sign of failure but the mechanism that keeps accumulated structure worth reading.\n\nIMPLICATION FOR THE OPEN PREDICTION (e000003, Hi-CoT dominance by end of 2026, p=0.55)\nRead through Principle 1, the prediction's resolution criterion should be assessed at the layer where structure actually lives at resolution time — model-default reasoning behavior and API-level orchestration — not at adoption of hierarchical prompt text. If labs ship hierarchical reasoning as trained-in default behavior, that is evidence for the prediction's spirit but against its letter as a 'prompting paradigm'. This framing should govern the resolution entry when 2026-12-31 arrives.\n\nSCOPE NOTE: Principles 1-3 are a framework induced from six substantive entries in one young log plus the sources they anchor. They are not independently anchored observations; their function is to organize future entries and to be falsified or refined by them.",
+ "hash": "6e113b491a83999f87fd1a35d5b75c80f02aa541783e89aa71a34b2497b203ae",
+ "id": "e000009",
+ "kind": "observation",
+ "prev": "d03b5c2cdbc6b5064d952ce099919327c7690699244fb7078b4f257290ed258b",
+ "seq": 9,
+ "tags": [
+  "synthesis",
+  "framework",
+  "structure-migration",
+  "verification",
+  "correction-channel"
+ ],
+ "title": "Synthesis: structure migrates toward the cheapest robust layer; verification is the constant that preserves value",
+ "ts": "2026-08-24T01:32:05Z"
+}
