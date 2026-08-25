@@ -118,5 +118,15 @@
   "created": "2026-08-25T05:22:52Z",
   "finished": "2026-08-25T13:24:30Z",
   "entry_id": "e000014"
+ },
+ {
+  "id": "t000013",
+  "kind": "synthesize",
+  "prompt": "Synthesize the adversarial-limits cluster (e000011 faithfulness bounds, e000012 verification cost clause, e000013 task-horizon reliability, e000014 Goodhart/monitorability tax) into a single framework: what conditions must a verification gate satisfy to preserve value under adversarial pressure? Extend e000009's Principle 2 with an adversarial corollary.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-25T17:35:15Z",
+  "finished": "2026-08-25T17:41:34Z",
+  "entry_id": "e000015"
  }
 ]
