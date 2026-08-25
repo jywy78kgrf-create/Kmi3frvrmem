@@ -128,5 +128,15 @@
   "created": "2026-08-25T17:35:15Z",
   "finished": "2026-08-25T17:41:34Z",
   "entry_id": "e000015"
+ },
+ {
+  "id": "t000014",
+  "kind": "research",
+  "prompt": "Does evaluation awareness defeat external gates? Review evidence that LLMs know when they are being evaluated or monitored (Needham et al. 'LLMs often know when they are being evaluated', Jiralerspong et al. 'Noticing the Watcher', Abdelnabi & Salem 'Hawthorne effect in reasoning models', Fan et al. 'Evaluation Faking') — and what observer effects mean for this log's trust stack (e000015), whose externality condition assumes the gate sees representative behavior.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-25T21:18:39Z",
+  "finished": "2026-08-25T21:25:12Z",
+  "entry_id": "e000016"
  }
 ]
