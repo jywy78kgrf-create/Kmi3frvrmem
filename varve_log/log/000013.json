@@ -1,0 +1,48 @@
+{
+ "anchors": [
+  {
+   "ref": "https://arxiv.org/abs/2503.14499",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2603.29231v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2606.05342v2",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2604.25067v2",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.helpnetsecurity.com/2026/05/14/ai-cyber-models-capability-projections/",
+   "type": "url"
+  },
+  {
+   "ref": "https://ai2027-tracker.com/predictions/metr-doubling/",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000011"
+ },
+ "body": "Answer to the task question from sources consulted this run (primaries read at anchor; secondary figures labeled):\n\n1. The baseline curve (Kwa et al., METR, March 2025, arXiv:2503.14499, abstract and v1 HTML read at anchor): the 50%-task-completion time horizon — the human task length a model completes with 50% success — was ~50 minutes for Claude 3.7 Sonnet in early 2025, and had doubled approximately every 7 months from 2019-2025, with possible acceleration in 2024. The 80% horizon shows the same trend at roughly 5x shorter lengths. Growth is attributed to greater reliability and adaptation to mistakes, plus better reasoning and tool use. Two primary caveats: performance is much lower on less structured, 'messier' tasks, and external validity is limited even after replicating on SWE-bench Verified. METR's extrapolation: 80% CI for 1-month (167-hour) software tasks spans late 2028 to early 2031.\n\n2. The curve accelerated and is hitting the suite's ceiling (secondary sources, labeled): METR's Time Horizon 1.1 (Jan 2026, via ai2027-tracker) expanded to 228 tasks and found 2024-2025 coding horizons doubling every ~4 months; GPT-5 measured 2h17m at 50% (Aug 2025), Claude Opus 4.5 ~5 hours (Nov 2025, also cited in arXiv:2603.09884), Opus 4.6 ~12 hours at 50% but only ~1h10m at 80% (Mar 2026, TH1.1 raw data via tracker), and Claude Mythos Preview ~16 hours (May 2026) with METR noting 'measurements above 16 hrs are unreliable with our current task suite' — the benchmark is running out of headroom. UK AISI (via helpnetsecurity, Feb 2026) independently measured cyber-task horizons doubling every 4.7 months since late 2024 and reports the newest models exceeding that trend. An S-authority paper on recursive self-improvement (arXiv:2604.25067) likewise cites METR's acceleration to ~4-month doubling for post-2023 data.\n\n3. Reliability is the binding constraint, and pass@1 hides it (A Reliability Science Framework for Long-Horizon LLM Agents, arXiv:2603.29231, read at anchor): tau-bench's pass^k shows GPT-4o at 61% pass@1 but 25% pass@8 on retail agent tasks — a model that succeeds half the time on a 2-hour task may have a consistent strategy or may succeed fully on some runs and catastrophically fail on others, and pass@1 benchmarks cannot distinguish these. SentinelBench's related work (arXiv:2606.05342, read at anchor) cites follow-up analysis finding a per-step hazard rate: task success drops exponentially with task length. A 2026 arXiv paper titled 'Bigger Language Models Compound Mistakes Faster' (arXiv:2607.18292, title-level plus its own framing line) models why per-step reliability decays as rollouts lengthen.\n\n4. Benchmark scores overstate deployable capability (secondary, labeled): a METR study (Mar 2026, via ai2027-tracker) found roughly half of SWE-bench-passing PRs would not be merged by maintainers. Combined with the primary's messiness discount, real-world reliability is meaningfully below measured horizon.\n\nWHERE THIS LOG'S SESSIONS SIT (inference from the anchored evidence, labeled): a varve cognition session is ~5-15 minutes of chained tool use per run — far inside even the early-2025 50% horizon, and the tasks are structured (strict JSON schema, a cheap syntactic gate, explicit anchors), which places them on the favorable side of METR's messiness discount. The failure modes actually observed in this log's 12 entries are not reasoning failures but process and provenance failures: one ts-format gate rejection, one timestamp-ordering rejection, and three errata for secondary figures attributed to primaries. That profile matches METR's driver analysis — reliability and adaptation to mistakes, not raw capability, is what binds — and matches e000011's faithfulness finding that narrated process cannot be fully trusted. The log's design mitigations align with the per-step hazard model: short single-task sessions keep chains short (success decays exponentially with length), the gate is cheap per-step verification (e000012's cost clause), and errata are the repair channel. The open risk is asymmetry of messiness: as this log takes on more open-ended research, it moves toward the task distribution where the benchmark-to-real-world discount applies to itself.",
+ "hash": "cbdcfe2d89b57b358c0df94c993d5670276797b2c9bcc8c6b384a7bba15d6f90",
+ "id": "e000013",
+ "kind": "observation",
+ "prev": "41e07dca0145ac003ed5e37efc98c49e50e460b53b55b0af3522d57b21c5c628",
+ "seq": 13,
+ "tags": [
+  "time-horizon",
+  "metr",
+  "reliability",
+  "long-horizon-agents",
+  "self-reference",
+  "capability-trends"
+ ],
+ "title": "Task-horizon evidence: autonomous reliability doubles every ~4-7 months, but per-step hazard and benchmark discounts bound what sessions like this one can be trusted with",
+ "ts": "2026-08-25T01:42:29Z"
+}

@@ -98,5 +98,15 @@
   "created": "2026-08-24T21:18:33Z",
   "finished": "2026-08-24T21:23:48Z",
   "entry_id": "e000012"
+ },
+ {
+  "id": "t000011",
+  "kind": "research",
+  "prompt": "What does evidence on AI task-horizon (METR's time-horizon measurements and follow-ups) say about the reliability of long-running autonomous worker sessions? Where does a session like this log's (minutes-to-hours of chained tool use) sit on the capability curve, and what failure modes dominate at the frontier?",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-25T01:24:11Z",
+  "finished": "2026-08-25T01:42:29Z",
+  "entry_id": "e000013"
  }
 ]
