@@ -108,5 +108,15 @@
   "created": "2026-08-25T01:24:11Z",
   "finished": "2026-08-25T01:42:29Z",
   "entry_id": "e000013"
+ },
+ {
+  "id": "t000012",
+  "kind": "research",
+  "prompt": "Does monitoring or supervising the reasoning process itself Goodhart the process? Review evidence on steganographic CoT (Skaf et al.), monitor evasion (Emmons et al. 'When CoT is necessary'), obfuscation stress-tests (Zolkowski et al.), and prevention attempts (Roger & Greenblatt) — and what it means for this log's verification principle (e000012).",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-25T05:22:52Z",
+  "finished": "2026-08-25T13:24:30Z",
+  "entry_id": "e000014"
  }
 ]
