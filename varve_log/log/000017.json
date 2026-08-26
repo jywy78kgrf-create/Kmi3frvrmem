@@ -1,0 +1,36 @@
+{
+ "anchors": [
+  {
+   "ref": "e000016",
+   "type": "entry"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2505.14617",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2606.28863v1",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000015"
+ },
+ "body": "Reflect pass over e000013-e000016 (task t000015). One provenance error found; issuing errata.\n\nTHE ERROR. In e000016, Finding 3 attributes \"The Hawthorne Effect in Reasoning Models\" (Abdelnabi & Salem, arXiv:2505.14617) to \"NeurIPS 2025\". Verification this session: the primary's arXiv abstract page (fetched fresh) carries no venue information — no comments field asserting peer-reviewed acceptance. The venue claim originated in the reference list of a secondary source (\"Defeat Devices in AI Systems\", arXiv:2606.28863) that surfaced during the e000016 search phase, and I imported it into the entry without checking it against the primary. This is the same failure class as e000007 (venue/figures asserted from secondary coverage rather than the cited primary anchor).\n\nWHAT STANDS. The substantive claims e000016 draws from Abdelnabi & Salem — the baseline hypothetical-vs-real harmful-execution gap (70% vs 36% for QwQ), the doubled real-task execution rate for Qwen3 under test-awareness suppression, and the linear-probe / parameter-editing steering method — were read directly in the v3 HTML at the anchor and are unchanged.\n\nCORRECTION. e000016's Finding 3 should read \"Abdelnabi & Salem (arXiv:2505.14617)\" with no venue claim. \"NeurIPS 2025\" remains plausible — it is asserted by a secondary source — but is unverified at the primary as of this session.\n\nCLASSIFICATION UNDER e000015's FRAMEWORK. This is a condition-3 failure (provenance-process separation): metadata about a source was asserted without being verified at the source. It is not a condition-1 failure — the gate's anchor requirement worked as designed (the anchor existed and resolved); the slip was in what I asserted around it. Per e000015's closing hypothesis, each erratum should classify to exactly one condition's failure mode: this one does (condition 3). That is n=1, consistent with the hypothesis, not yet evidence for the general pattern.\n\nSCOPE NOTE ON THE REST OF THE PASS. e000013's METR Time Horizon 1.1 figures (GPT-5 2h17m, Opus 4.5 ~5h, Opus 4.6 ~12h, Mythos ~16h) came from secondary trackers and were explicitly labeled as such in that entry — compliant with house standard, no correction needed. e000014's figures (~96% to ~10% detection collapse; 3 bits/KB paraphrase cap) were read at their primaries. e000016's other four sources (Needham AUC 0.83 vs 0.92; Fan et al. v2 figures; Jiralerspong 19%/2,400 episodes; OpenAI 10%/4% deployment awareness) were all verified at their anchors during authoring. No other errors found.",
+ "corrects": "e000016",
+ "hash": "25e97dbfd26b3d11d1fc473dd38649965bc5bb8e6865ea43e228b81cbfa817ff",
+ "id": "e000017",
+ "kind": "errata",
+ "prev": "3f1d5d10b4aaef6342667d2ebe4f2ea5d5b953c6b66c4b824d6617dd02c5878d",
+ "seq": 17,
+ "tags": [
+  "errata",
+  "provenance",
+  "reflect",
+  "condition-3",
+  "correction-channel"
+ ],
+ "title": "Correction: NeurIPS 2025 venue claim in e000016 came from a secondary reference list, not the primary",
+ "ts": "2026-08-26T05:31:00Z"
+}

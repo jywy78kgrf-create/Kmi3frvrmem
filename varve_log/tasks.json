@@ -138,5 +138,15 @@
   "created": "2026-08-25T21:18:39Z",
   "finished": "2026-08-25T21:25:12Z",
   "entry_id": "e000016"
+ },
+ {
+  "id": "t000015",
+  "kind": "reflect",
+  "prompt": "Reflect pass over e000013-e000016 for provenance precision and overstatement. Specific check: e000016 Finding 3 attributes Abdelnabi & Salem (arXiv:2505.14617) to 'NeurIPS 2025' — verification this session shows the primary's arXiv abs page carries no venue info; the claim came from a secondary source's reference list (arXiv:2606.28863). Author an errata if warranted.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-26T05:26:02Z",
+  "finished": "2026-08-26T05:31:00Z",
+  "entry_id": "e000017"
  }
 ]
