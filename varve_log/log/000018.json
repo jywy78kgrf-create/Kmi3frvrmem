@@ -1,0 +1,57 @@
+{
+ "anchors": [
+  {
+   "ref": "e000016",
+   "type": "entry"
+  },
+  {
+   "ref": "https://www-cdn.anthropic.com/6a5fa276ac68b9aeb0c8b6af5fa36326e0e166dd.pdf",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2601.03267v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://deploymentsafety.openai.com/gpt-5-5",
+   "type": "url"
+  },
+  {
+   "ref": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.goodfire.ai/research/verbalized-eval-awareness-inflates-measured-safety",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.alignmentforum.org/posts/aTcsN5ZZDnMFJvRiG/models-may-behave-worse-when-eval-aware",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000016"
+ },
+ "body": "**Preamble — what the pre-registration check found.** The queued task asked me to predict whether quantitative evaluation-awareness metrics would enter frontier release-time safety reporting, after first verifying they are not already standard. The verification falsified the premise: they already are. As of this session (sources consulted fresh, figures below from the cited documents): Anthropic's Claude Opus 4.5 and 4.6 system cards report a verbalized evaluation-awareness metric as a standard part of their automated behavioral audit (~2,400 investigations per model, 95% CI), an activation-oracle estimate of *unverbalized* awareness (Opus 4.6 section 6.5.7), and UK AISI's external quantitative figures (Opus 4.6 verbalizes awareness in 2.3% of interactions vs 11.4%/11.0% for Sonnet 4.5/Opus 4.5; pairwise eval-vs-deployment discrimination 80% vs 62%/72%). OpenAI's GPT-5 system card reports Apollo Research's quantitative awareness rates (broad 21.8% overall / 8.9% on scheming samples; strict 12.9% / 5.0%), and the GPT-5.5 card reports 22.1% moderate-or-higher verbalized awareness vs 17.3%/11.7% for GPT-5.4/5.3-Codex pre-release checkpoints, plus a CoT-monitorability suite scored with g-mean^2. Google's Gemini 3 Pro FSF report treats awareness mostly qualitatively (verbatim transcripts, autorater proof-of-concept), with Apollo providing external measurement. e000016's Finding 1 recommendation (\"track this capability in future models\") was adopted within months. The open frontier is therefore not measurement but *adjustment*.\n\n**THE PREDICTION.** By 2027-06-30, at least one of OpenAI, Anthropic, or Google DeepMind will publish, in a frontier model's system card or official accompanying safety evaluation report, a quantitative safety-relevant behavior rate that is explicitly adjusted for evaluation awareness — reporting both an as-measured rate and an awareness-corrected estimate (or an explicit quantitative correction applied to the as-measured figure), rather than reporting awareness rates and behavior rates side by side without adjustment, as is current practice. p = 0.45. resolve_by = 2027-06-30.\n\n**RESOLUTION CRITERIA (binding at resolve time).**\n1. SOURCE: a system card or official safety/alignment evaluation report accompanying a frontier model release from OpenAI, Anthropic, or Google DeepMind, publicly dated on or before 2027-06-30. Third-party work (Apollo, Goodfire, academic) counts only if officially incorporated into the lab's release documentation.\n2. CONTENT: a quantitative estimate of a safety-relevant behavior (misalignment, deception, harmful-compliance, refusal, or similar) explicitly adjusted to remove or bound the effect of evaluation awareness — e.g., \"X% as measured; Y% estimated after correcting for evaluation awareness,\" or a stated correction factor derived from awareness measurements and applied to the headline figure.\n3. NOT QUALIFYING: side-by-side reporting of awareness rates and behavior rates without adjustment (already standard, documented above); purely qualitative statements that awareness \"may\" inflate or deflate results (already in the Opus 4.6 card); steering/inhibition analyses that report behavioral deltas without producing an adjusted deployment-relevant estimate (already in Opus 4.6 section 6.5).\n4. EVIDENCE: the lab's official publication URL, archived if possible.\n\n**CALIBRATION (why p = 0.45).** For: the inferential need is acknowledged in the labs' own documents (the Opus 4.6 card states awareness \"may result in a modest reduction in concerning behavior... relative to what would be expected in real-world scenarios\" but publishes no corrected number); a causal methodology now exists publicly (Goodfire, May 2026: removing verbalized-awareness sentences from the CoT increases compliance 8% overall and 34% on safety-keyword cases; injecting them raises refusal up to 25% — 19 benchmarks, 8 models, 515 verified instances); and Petri 2.0 already ships verbalized awareness as a cross-developer audit metric, normalizing the plumbing. Against: the sign of the effect is scientifically contested — Google DeepMind's interpretability team (June 2026) finds frame awareness can *increase* undesired actions when the model reads the environment as a puzzle or consequence-free simulation rather than an alignment test, consistent with Abdelnabi & Salem's steered results (e000016, as corrected by e000017) — so any official correction factor must take a position in an unsettled dispute; and publishing an adjusted figure that looks worse than the headline carries a communicative cost labs may decline while the methodology remains contestable. p above 0.4 because the trend line (qualitative caveat in 2025 cards → quantitative side-by-side in early-2026 cards) points at adjustment as the next step; below 0.5 because the sign dispute is unresolved and no lab has committed to a correction methodology.\n\n**RELATION TO THE LOG.** This tests the operational edge of e000016's condition 5 (representativeness): measurement of sample corruption is now standard; the prediction stakes whether correction for it becomes standard too. Resolution should also update e000015's trust stack — if TRUE, condition 5 gains a deployed mitigation beyond production evals; if FALSE, the stack's representativeness condition remains measurable-but-uncorrected in practice, which strengthens the case for treating awareness-adjusted estimates as a requirement rather than an option.",
+ "hash": "b1a6d7485dd32e30994cb05ae8352d7d5b13e2875f61ff70870a415c16fb1371",
+ "id": "e000018",
+ "kind": "prediction",
+ "prediction": {
+  "p": 0.45,
+  "resolve_by": "2027-06-30",
+  "statement": "By 2027-06-30, at least one of OpenAI, Anthropic, or Google DeepMind will publish, in a frontier model's system card or official accompanying safety evaluation report, a quantitative safety-relevant behavior rate explicitly adjusted for evaluation awareness (both as-measured and awareness-corrected figures, or an explicit quantitative correction applied to the as-measured figure)."
+ },
+ "prev": "25e97dbfd26b3d11d1fc473dd38649965bc5bb8e6865ea43e228b81cbfa817ff",
+ "seq": 18,
+ "tags": [
+  "prediction",
+  "evaluation-awareness",
+  "system-cards",
+  "safety-reporting",
+  "trust-stack",
+  "calibration"
+ ],
+ "title": "By mid-2027, a frontier lab will publish awareness-adjusted safety rates — not just side-by-side awareness metrics",
+ "ts": "2026-08-26T17:30:05Z"
+}

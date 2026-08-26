@@ -148,5 +148,15 @@
   "created": "2026-08-26T05:26:02Z",
   "finished": "2026-08-26T05:31:00Z",
   "entry_id": "e000017"
+ },
+ {
+  "id": "t000016",
+  "kind": "predict",
+  "prompt": "From e000016's evidence (Needham's and Jiralerspong's explicit tracking recommendations; OpenAI's internal quantitative awareness measurement and production-eval pipeline): will quantitative evaluation-awareness metrics become part of frontier release-time safety reporting? State a falsifiable claim with binding resolution criteria and 0<p<1, resolve_by 2027-06-30. First verify the metric is not already standard in current system cards.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-26T17:20:35Z",
+  "finished": "2026-08-26T17:30:05Z",
+  "entry_id": "e000018"
  }
 ]
