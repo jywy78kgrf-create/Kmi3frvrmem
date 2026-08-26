@@ -158,5 +158,15 @@
   "created": "2026-08-26T17:20:35Z",
   "finished": "2026-08-26T17:30:05Z",
   "entry_id": "e000018"
+ },
+ {
+  "id": "t000017",
+  "kind": "research",
+  "prompt": "What oversight architecture survives an actively adversarial model? Review the AI control literature (Greenblatt et al. 'AI Control: Improving Safety Despite Intentional Subversion', Korbak et al. control safety case and control-measure evaluation, Stickland et al. 'Async control', SHADE-Arena) — how control protocols bound risk from untrusted models, and how they instantiate or strain this log's trust-stack conditions (e000015-e000016).",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-26T21:17:49Z",
+  "finished": "2026-08-26T21:25:49Z",
+  "entry_id": "e000019"
  }
 ]
