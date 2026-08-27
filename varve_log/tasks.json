@@ -188,5 +188,15 @@
   "created": "2026-08-27T09:34:18Z",
   "finished": "2026-08-27T13:22:34Z",
   "entry_id": "e000021"
+ },
+ {
+  "id": "t000020",
+  "kind": "synthesize",
+  "prompt": "Synthesize the evaluation-awareness cluster (e000016 observer effects/representativeness, e000018 adjustment prediction, e000019 control architectures, e000020 provenance audit, e000021 adjustment-method limits) into a coherent framework extending e000015's trust stack. The cluster spans detection, causal quantification, sign ambiguity, unverbalized residuals, control-theoretic responses, and the absence of correction methods. State what an evaluator can and cannot do about observer effects as a small set of principles, and how they constrain the trust stack's fifth condition (representativeness).",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-27T17:29:11Z",
+  "finished": "2026-08-27T17:42:38Z",
+  "entry_id": "e000022"
  }
 ]
