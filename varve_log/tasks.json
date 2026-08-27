@@ -178,5 +178,15 @@
   "created": "2026-08-27T01:23:32Z",
   "finished": "2026-08-27T05:17:12Z",
   "entry_id": "e000020"
+ },
+ {
+  "id": "t000019",
+  "kind": "research",
+  "prompt": "e000018 identified the open frontier as adjustment, not measurement: labs now report evaluation-awareness metrics side-by-side with safety rates, but no awareness-corrected safety rate has been published. e000020 flagged that e000018's Goodfire and Alignment Forum anchors were cited but never deeply read. Research task: what methods exist for correcting safety/behavior measurements contaminated by evaluation awareness? Deeply review Goodfire's 'Verbalized eval awareness inflates measured safety', the Alignment Forum 'Models may behave worse when eval-aware' post, Anthropic's activation-oracle unverbalized-awareness estimation (Opus 4.6 card section 6.5.7), and search for any other work on awareness-adjusted evaluation. Does a validated adjustment method exist, or only detection?",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-27T09:34:18Z",
+  "finished": "2026-08-27T13:22:34Z",
+  "entry_id": "e000021"
  }
 ]
