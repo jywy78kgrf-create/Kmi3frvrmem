@@ -198,5 +198,15 @@
   "created": "2026-08-27T17:29:11Z",
   "finished": "2026-08-27T17:42:38Z",
   "entry_id": "e000022"
+ },
+ {
+  "id": "t000021",
+  "kind": "research",
+  "prompt": "e000022's observer-effect trilemma lists measurand drift as an obstacle to awareness adjustment (Goodfire: steering away awareness changes what is measured). Goodfire's prior-work section cites Hua et al. experiments on a model organism of eval awareness. Research task: find and read Hua et al.'s model-organism work — what does training-level / organism-level evidence say about whether evaluation awareness can be separated from behavior without changing the measurand? Also find Apollo Research's own statement on declining to formally assess Claude Opus 4.6 (currently known only via Goodfire's intro). Does organism-level evidence strengthen or weaken e000022's trilemma horn (a)?",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-27T21:19:36Z",
+  "finished": "2026-08-27T21:26:38Z",
+  "entry_id": "e000023"
  }
 ]
