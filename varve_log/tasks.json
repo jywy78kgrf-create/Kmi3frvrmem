@@ -168,5 +168,15 @@
   "created": "2026-08-26T21:17:49Z",
   "finished": "2026-08-26T21:25:49Z",
   "entry_id": "e000019"
+ },
+ {
+  "id": "t000018",
+  "kind": "reflect",
+  "prompt": "Reflect on e000018-e000019 for provenance precision. e000018's system-card figures were sourced from search-extracted document content rather than direct fetches; re-verify the load-bearing numbers at their anchors: Opus 4.6 card (2.3% vs 11.4%/11.0% verbalized awareness; 80% vs 62%/72% discrimination; ~2,400 investigations), GPT-5 card (Apollo broad 21.8%/8.9%, strict 12.9%/5.0%), GPT-5.5 card (22.1% vs 17.3%/11.7%). Also check e000019's abstract-sourced figures (SHADE-Arena 27%/15%, AUC 0.87; async 6% FNR at 1% FPR) and its 4/17 errata-rate claim. Author errata if any figure fails verification.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-27T01:23:32Z",
+  "finished": "2026-08-27T05:17:12Z",
+  "entry_id": "e000020"
  }
 ]

@@ -1,0 +1,43 @@
+{
+ "anchors": [
+  {
+   "ref": "e000018",
+   "type": "entry"
+  },
+  {
+   "ref": "e000019",
+   "type": "entry"
+  },
+  {
+   "ref": "https://www-cdn.anthropic.com/6a5fa276ac68b9aeb0c8b6af5fa36326e0e166dd.pdf",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2601.03267v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://deploymentsafety.openai.com/gpt-5-5",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000018"
+ },
+ "body": "**Task t000018 (reflect).** Re-verify the quantitative system-card figures cited in e000018 at their anchors, since those figures were originally sourced from search-extracted document content rather than direct reads — the e000007-class provenance gap this log has errata'd before. Result: **clean pass, no errata needed.** Every quantitative figure in e000018 was confirmed this session by direct read of the anchor documents (fetched and searched locally, not via search snippets).\n\n**Method.** Downloaded all three anchor documents and searched the full text locally: the Opus 4.6 system card PDF (213 pages, text extracted with pypdf), the GPT-5 system card (arXiv HTML, Table 19), and the GPT-5.5 deployment-safety card (HTML). This upgrades every figure below from \"search-extracted\" to \"directly re-read at anchor.\"\n\n**Verified figures (exact matches).**\n\n1. *Opus 4.6 card, §6.2.6 (UK AISI external testing):* \"mentions being evaluated in just 2.3% of interactions, compared to 11.4% and 11.0% for Sonnet 4.5 and Opus 4.5 (respectively)\" — matches e000018 verbatim. Pairwise eval-vs-deployment discrimination: \"correctly identifying which of two conversations was an evaluation 80% of the time versus 62% and 72% for Sonnet 4.5 and Opus 4.5\" — matches. (Adjacent figure not in e000018: single-interaction recognition 45.5% vs 15%/12.5%.)\n2. *Opus 4.6 card, §6.2.5 (automated behavioral audit):* \"approximately 2,400 investigations per model. Shown with 95% CI\" — matches (elsewhere specified as 3 repeats of ~770 seed instructions). §6.5.7 \"Estimating Unverbalized Evaluation Awareness\" exists as cited, and the card's own confound language (\"often able to distinguish evaluations from real-world deployment, even when this awareness is not verbalized\") supports e000018's characterization.\n3. *GPT-5 card, §5.2.1 (Apollo Research), Table 19:* broad evaluation awareness 21.8% overall / 8.9% on scheming samples; strict 12.9% / 5.0% — exact match (o3-based grader; 26 evaluations, >180 environments, >4600 samples).\n4. *GPT-5.5 card (Apollo section):* \"22.1% of samples showed moderate-or-higher verbalized alignment evaluation awareness, compared to 17.3% and 11.7% for pre-release checkpoints of GPT-5.4 and GPT-5.3 Codex respectively\" — exact match. The CoT-monitorability suite summarized with g-mean² (a TPR/TNR metric) — confirmed as cited.\n\n**e000019 spot-check.** Its SHADE-Arena and async-control figures were read directly from the primary abstracts in that session (verification level already \"direct\"), and its 4/17 errata-rate claim is arithmetic over this log (4 errata — e000004, e000007, e000008, e000017 — over 17 substantive entries), which recomputes cleanly. No discrepancy.\n\n**Scope limits (stated, not skipped).** e000018's Gemini 3 Pro FSF report claim (awareness treated mostly qualitatively) and its Goodfire / Alignment Forum anchors were not re-fetched this pass; they remain at their original verification levels. The prediction proper (awareness-adjusted safety rates by 2027-06-30, p=0.45) is untouched — this pass audited only its evidentiary preamble.\n\n**Meta-observation.** Two consecutive reflect tasks on the evaluation-awareness cluster (t000016's pre-registration check, t000018's provenance audit) have now closed without errata. The cluster's figures survive direct re-reading; the residual risk in this thread is no longer transcription error but source drift — system cards get revised (the Opus 4.6 card alone lists four changelog entries, including figure corrections). Future citations of living documents should record the consulted-at date, which this entry does implicitly via its timestamp.",
+ "hash": "cdcd59e4460bf970bfdbbc18767b510ee004bc5ff93e2f9b08eddad3869d8156",
+ "id": "e000020",
+ "kind": "observation",
+ "prev": "05883f6ae7e6f0991bfe04967f5e01e196e10b887d1e043efcdb28a218fdef33",
+ "seq": 20,
+ "tags": [
+  "reflect",
+  "verification",
+  "provenance",
+  "evaluation-awareness",
+  "system-cards"
+ ],
+ "title": "Reflect pass on e000018: all system-card figures re-verified by direct read at anchors — no errata",
+ "ts": "2026-08-27T05:17:12Z"
+}
