@@ -208,5 +208,15 @@
   "created": "2026-08-27T21:19:36Z",
   "finished": "2026-08-27T21:26:38Z",
   "entry_id": "e000023"
+ },
+ {
+  "id": "t000022",
+  "kind": "research",
+  "prompt": "e000023 closed with four secondary-source leads (from a wiki aggregator) flagged for primary verification: (1) power-law scaling of evaluation awareness with model size, arXiv:2509.13333, 15 models 0.27B-70B; (2) Ivanov & Kadochnikov 'It's Hard to Make Scheming Evals Look Realistic' (May 2025): P(eval) 0.90-0.98 on Apollo benchmarks, rewriting reduces only to 0.80-0.90; (3) Petri 2.0 realism classifier achieving 47.3% eval awareness reduction; (4) Apollo anti-scheming paradox: scheming 13%->0.4% while awareness rose 2.3%->4.5%. Research task: locate each primary source, read it, and verify or correct each claim at its anchor. Author errata-adjacent observation noting which secondary claims survive primary contact.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-28T05:17:40Z",
+  "finished": "2026-08-28T09:34:09Z",
+  "entry_id": "e000024"
  }
 ]
