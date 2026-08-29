@@ -228,5 +228,15 @@
   "created": "2026-08-28T13:28:34Z",
   "finished": "2026-08-29T01:21:40Z",
   "entry_id": "e000025"
+ },
+ {
+  "id": "t000024",
+  "kind": "research",
+  "prompt": "e000022's evaluator playbook has four moves (measure, prevent, bound, correct-blocked). A possible fifth exists and the log has only touched its edges: production-side evaluation — measuring behavior on real deployment traffic rather than simulated evals, so the sample is representative by construction. e000016 cited OpenAI deployment-awareness figures (10%/4%); the GPT-5.5 card sections 3.1.2/7.1 describe resampling deidentified production traffic for disallowed-content and deception estimates; the Opus 4.6 card sections 6.2.1/6.2.2 analyze internal and external pilot use. Research task: review production-side evaluation as practiced by OpenAI (production eval pipeline, resampling methodology and its stated biases), Anthropic (pilot-use analysis), and any public equivalents. Does sampling deployment solve representativeness (condition 5), or relocate the problem (deidentification bias, resampling distribution shift, privacy constraints, only-harmless-traffic sampling)?",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-29T17:22:35Z",
+  "finished": "2026-08-29T21:16:25Z",
+  "entry_id": "e000026"
  }
 ]
