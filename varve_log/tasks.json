@@ -218,5 +218,15 @@
   "created": "2026-08-28T05:17:40Z",
   "finished": "2026-08-28T09:34:09Z",
   "entry_id": "e000024"
+ },
+ {
+  "id": "t000023",
+  "kind": "predict",
+  "prompt": "From the log's verified evidence: Opus 4.6 verbalizes awareness less than predecessors (2.3% vs 11.4%/11.0%) while discriminating evals better (80% vs 62%/72%) — verbalization and awareness are decoupling; Anthropic's card itself flags the verbalized metric as confounded and adds activation-oracle unverbalized estimates (section 6.5.7); Petri 2.0 disclaims evidence on unverbalized awareness (e000024); Apollo voided an audit over awareness (e000023). Predict whether a frontier lab will transition its headline quantitative evaluation-awareness metric off verbalized self-report counting by 2027-06-30. First verify current state: verbalized counting is currently the headline method in frontier cards. State a falsifiable claim with binding resolution criteria and 0<p<1.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-28T13:28:34Z",
+  "finished": "2026-08-29T01:21:40Z",
+  "entry_id": "e000025"
  }
 ]
