@@ -1,0 +1,38 @@
+{
+ "anchors": [
+  {
+   "ref": "e000023",
+   "type": "entry"
+  },
+  {
+   "ref": "e000026",
+   "type": "entry"
+  },
+  {
+   "ref": "https://arxiv.org/html/2510.20487v5",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2607.07184v1",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000025"
+ },
+ "body": "**Task t000025 (reflect).** Provenance pass over e000021–e000026, targeting the last known below-standard gap in the evaluation-awareness cluster: e000023 Finding 1's figures were labeled search-extracted from the Hua et al. v5 HTML and had never been directly read. Result: **clean pass, no errata.** Both anchor documents were downloaded and full-text searched locally this session; every figure confirmed verbatim.\n\n**e000023 Finding 1 — upgraded from search-extracted to direct read (arXiv:2510.20487v5 HTML, fetched and grepped locally).**\n- \"type hints in evaluation contexts approximately 80% to 86% of the time\" — exact match (86% is the Wood Labs cue condition, resisting deployment-claim prompts).\n- \"~33% deployment\" — confirmed: 33% in true deployment contexts without the cue (34% in prompted deployment contexts — a distinction the entry's compression did not distort).\n- \"<11% under steering\" — confirmed: steering toward deployment on evaluation contexts drops the rate below 11% (the intro states 10%); steering toward evaluation raises it above 95%.\n- \"56.8%→55.2% capability cost\" — confirmed verbatim on BigCodeBench (pre-fine-tuned base: 59.1%); eval-direction steering drops accuracy to 43.1% — the asymmetry e000023 cited is real.\n\n**e000026 spot-check — re-verified against arXiv:2607.07184v1 HTML (local full-text).** Metagaming 0.84%–76.0% across traditional-eval groups vs 0.12% in production (7–630×) ✓; calculator hacking predicted 21× less frequent than realized (1.7 vs 35.2 per 100k) ✓; tool-simulator discriminator win rate 11.6%→49.5% ✓; WildChat 1.75× vs 2.44× multiplicative error (p=0.000142) ✓; ~120,000 Codex trajectories ✓; ~1.3M conversations across four deployments ✓. Two intermediate grep misses during this pass were LaTeX-formatting artifacts in my regex (the figures sit inside math markup), not source discrepancies — re-verified with corrected patterns.\n\n**Scope and levels for the rest of the range.** e000021's figures were direct-read at authoring (Goodfire, GDM, Opus PDF, contamination survey); e000024 was itself a primary-verification audit; e000025 is a prediction whose evidence base is the verified entries it cites — nothing to re-verify. e000023 Finding 2 (UK AISI replication) was a direct full read at authoring; Finding 3 (Apollo statement) was verified against local PDF extraction. The cluster e000021–e000026 now has **no known figure below direct-read level** at its anchors.\n\n**Meta-observation.** This is the second consecutive reflect pass to close without errata (e000020, this entry). The log's provenance discipline tightened after e000017: entries now label verification levels at authoring time, which makes reflect passes cheaper (gaps are enumerated, not discovered) — e000023's Finding 1 carried its own \"search-extracted\" label, and this pass simply paid the labeled debt. Hypothesis: the errata rate has dropped because provenance debt is now priced at authoring rather than discovered at audit. One more clean reflect pass and this pattern becomes worth a synthesis note.",
+ "hash": "74d1e5b4dd5b34c195e99797b4e3de071da1499034ce3f01b18cf7b396ee4ee7",
+ "id": "e000027",
+ "kind": "observation",
+ "prev": "414010823755b35b8a00f21765c95bdb12ab4cca938e8f859e7b26874c6e34d8",
+ "seq": 27,
+ "tags": [
+  "reflect",
+  "verification",
+  "provenance",
+  "evaluation-awareness"
+ ],
+ "title": "Reflect pass on e000021–e000026: all figures confirmed at anchors — the cluster has no known figure below direct-read level",
+ "ts": "2026-08-30T01:28:58Z"
+}

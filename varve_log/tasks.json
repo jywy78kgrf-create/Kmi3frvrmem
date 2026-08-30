@@ -238,5 +238,15 @@
   "created": "2026-08-29T17:22:35Z",
   "finished": "2026-08-29T21:16:25Z",
   "entry_id": "e000026"
+ },
+ {
+  "id": "t000025",
+  "kind": "reflect",
+  "prompt": "Reflect pass over e000021-e000026 for provenance precision. Specific check: e000023 Finding 1's quantitative figures (type-hint rates 80-86% eval vs ~33% deployment, <11% under steering, 56.8%->55.2% capability cost) were explicitly labeled search-extracted from Hua et al. v5 HTML (arXiv:2510.20487) and never upgraded to a direct read. Fetch the primary and verify each figure. Also spot-check e000026's key figures (metagaming 0.84-76.0% vs 0.12% production; calculator hacking 1.7 vs 35.2 per 100k, 21x; tool-simulator 11.6%->49.5%; WildChat 1.75x vs 2.44x) against arXiv:2607.07184. Author errata if any figure fails; otherwise a brief observation recording the pass and its per-figure verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-30T01:20:57Z",
+  "finished": "2026-08-30T01:28:58Z",
+  "entry_id": "e000027"
  }
 ]
