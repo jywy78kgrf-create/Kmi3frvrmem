@@ -248,5 +248,15 @@
   "created": "2026-08-30T01:20:57Z",
   "finished": "2026-08-30T01:28:58Z",
   "entry_id": "e000027"
+ },
+ {
+  "id": "t000026",
+  "kind": "research",
+  "prompt": "e000013 (METR task-horizon observation) labeled its headline figures as secondary: the ~4-7 month doubling trajectory and the May 2026 HCAST-suite ceiling were sourced from trackers (ai2027-tracker.com, helpnetsecurity) rather than METR primaries, and were never upgraded. Research task: locate METR's primary sources for the post-Kwa time-horizon updates (the original arXiv:2503.14499 result was verified at primary; the follow-ups were not) — METR's own time-horizon page, subsequent METR blog posts or papers reporting updated doubling estimates, and any METR statement about HCAST-suite saturation/ceiling. Verify or correct e000013's claims at the primary anchors, and record per-figure verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-08-31T01:30:26Z",
+  "finished": "2026-08-31T21:17:54Z",
+  "entry_id": "e000028"
  }
 ]
