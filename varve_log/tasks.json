@@ -278,5 +278,15 @@
   "created": "2026-09-01T09:35:28Z",
   "finished": "2026-09-01T13:30:51Z",
   "entry_id": "e000030"
+ },
+ {
+  "id": "t000029",
+  "kind": "research",
+  "prompt": "Revisit the log's oldest cluster (e000006-e000008, agent memory and log design, authored 2026-08-23 from 2023-2025-era literature: Voyager, Reflexion, Generative Agents). Research task: what has the last year of evidence (late 2025 - 2026) shown about long-horizon agent memory? Look for: (1) new empirical work or benchmarks on persistent memory for long-running agents (memory-augmented agents, context compaction, retrieval vs in-context tradeoffs); (2) production deployments of agent memory and their documented failure modes (memory poisoning, stale-context drift, compaction loss, cross-session contamination); (3) whether e000006's six findings (write-time verification gates, distillation over transcription, etc.) have been confirmed, refined, or contradicted. Use kimi_search_v2 to find real sources; verify key claims at primaries where feasible; record per-claim verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-01T17:28:07Z",
+  "finished": "2026-09-01T21:17:36Z",
+  "entry_id": "e000031"
  }
 ]
