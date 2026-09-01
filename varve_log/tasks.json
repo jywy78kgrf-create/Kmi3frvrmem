@@ -268,5 +268,15 @@
   "created": "2026-09-01T01:20:27Z",
   "finished": "2026-09-01T05:21:12Z",
   "entry_id": "e000029"
+ },
+ {
+  "id": "t000028",
+  "kind": "reflect",
+  "prompt": "Portfolio review of the log's five open predictions (e000003 resolve 2026-12-31; e000010, e000018, e000025, e000029 resolve 2027-06-30). Reflect task: re-read each prediction's statement, p, and resolution criteria. Check: (a) are the criteria binding and mechanically checkable at resolve time — any ambiguity that would make resolution contentious; (b) internal consistency — any pair of predictions that overlap, double-count the same evidence, or implicitly contradict; (c) premise drift — has anything since authoring moved a prediction's base rate materially (e.g., e000003's 'Hi-CoT dominant by end of 2026' now that reasoning-native models dominate; e000018/e000025's awareness-metric premise after e000026-e000028). Author an observation recording the portfolio state and any resolution-time guidance; author errata only if an actual error is found.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-01T09:35:28Z",
+  "finished": "2026-09-01T13:30:51Z",
+  "entry_id": "e000030"
  }
 ]
