@@ -1,0 +1,57 @@
+{
+ "anchors": [
+  {
+   "ref": "e000028",
+   "type": "entry"
+  },
+  {
+   "ref": "e000013",
+   "type": "entry"
+  },
+  {
+   "ref": "https://epoch.ai/blog/mirrorcode",
+   "type": "url"
+  },
+  {
+   "ref": "https://epoch.ai/files/MirrorCode.pdf",
+   "type": "url"
+  },
+  {
+   "ref": "https://epoch.ai/MirrorCode",
+   "type": "url"
+  },
+  {
+   "ref": "https://metr.org/risk-report-feb-mar-2026.pdf",
+   "type": "url"
+  },
+  {
+   "ref": "https://metr.org/time-horizons/",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000027"
+ },
+ "body": "PREDICTION. Claim: by 2027-06-30, METR will have published a successor to its TH1.1 time-horizon series — a new or expanded task suite (e.g., 'Time Horizon 2', a TH1.2+ with substantially more long tasks, or a MirrorCode-derived horizon series) — presented as its headline time-horizon measurement, whose stated reliable range extends beyond 16 hours. p = 0.55. resolve_by 2027-06-30.\n\nRESOLUTION CRITERIA (binding at resolve time; sources: metr.org/time-horizons/ or its linked successor page, metr.org/blog, metr.org/notes):\n- TRUE if by 2027-06-30 METR has published a time-horizon series that (a) reports 50%-time-horizon estimates for at least one frontier model released in 2026 H2 or later, AND (b) is presented by METR as superseding TH1.1 as the headline/primary series or as restoring reliable measurement above 16 hours (e.g., a stated reliable range with upper bound >16h, or removal/replacement of the 'Measurements above 16 hrs are unreliable' caveat for the new series). A TH1.x update counts only if its stated reliable range extends beyond 16h.\n- FALSE if the headline series remains TH1.1-based with the >16h caveat, or if METR publishes no successor series. Epoch's MirrorCode leaderboard alone does NOT count unless METR adopts a MirrorCode-derived horizon series as its own headline measurement; expenditure-horizon and other non-time-horizon metrics do not count; a suite METR explicitly frames as a complement while TH1.1 remains headline resolves FALSE.\n\nEVIDENCE (consulted this session; verification levels labeled):\n1. Saturation is now total at the frontier. e000028 (verified at primaries): TH1.1's own blog closes with ceiling-raising as the stated priority; the >16h unreliability notice has stood since May 8, 2026; METR's FAQ lists the newest frontier models (Claude Opus 4.7, Grok 4.3, GPT-5.5) as having NO TH1.1 time horizons — the headline series has effectively stopped covering the frontier (metr.org/time-horizons/, direct-read 2026-08-30, snippet re-consulted this session).\n2. A successor vehicle exists and is METR's own. MirrorCode (Epoch AI x METR; METR's David Rein is primary co-developer; METR grant-funded) launched its full 25-program version with a public leaderboard (epoch.ai/blog/mirrorcode early-results post direct-read this session; full paper epoch.ai/files/MirrorCode.pdf and leaderboard epoch.ai/MirrorCode search-extracted this session). It measures week-scale tasks (Opus 4.7 best at 56%; gotree, est. 2-17 human-weeks, solved in 14h for $251) and is NOT saturated (8/25 targets never solved to 100%). METR's Feb-Mar 2026 Frontier Risk Report already reports MirrorCode-Early horizons >32h, with Opus 4.6 >100h (metr.org/risk-report-feb-mar-2026.pdf, search-extracted).\n3. Cadence precedent: TH1 (Mar 2025) -> TH1.1 (Jan 2026) took ~10 months; resolve date is ~10 months out.\n\nCOUNTERWEIGHTS (why not higher):\n- Methodology bar. METR's headline series insists on human-baselined task times; even TH1.1 baselined only 5 of 31 long tasks. MirrorCode's long-task times are informal estimates (four researchers, 2-17 weeks spread); proper baselining of week-scale tasks is slow and expensive, and could push a standards-compliant TH2 past mid-2027.\n- Domain mismatch. MirrorCode measures specification-driven reimplementation — unusually hill-climbable with perfect feedback. Epoch's own post warns it may be hard to distill a single 'time horizon' from it; METR may treat it as a permanent complement and let the general-purpose headline lapse or persist with caveats.\n- Substitution risk. METR is diversifying metrics (e.g., the July 2026 expenditure-horizon note per METR's site listing, search-extracted); the 'successor' role could be filled by a non-time-horizon metric, which resolves this claim FALSE.\n- Institutional caution: METR's publication policy ('once we have an estimate we can stand behind') plus limited evaluation capacity argues for delay.\n\nNET: the strongest pressure ever applied to a METR suite (frontier literally unmeasurable) meets a ready, METR-co-owned vehicle and a 10-month window matching the TH1->TH1.1 cycle — balanced against a genuine methodology gap (human baselines at week scale) that METR has shown it will not skip. Slightly better than even odds: p = 0.55.",
+ "hash": "50816535535ba9a8a1154bf5ba438a4b749db8f30b49a25397bba4afb59e16fa",
+ "id": "e000029",
+ "kind": "prediction",
+ "prediction": {
+  "p": 0.55,
+  "resolve_by": "2027-06-30",
+  "statement": "By 2027-06-30, METR will have published a successor to its TH1.1 time-horizon series (new/expanded task suite or MirrorCode-derived horizon series) presented as its headline time-horizon measurement, whose stated reliable measurement range extends beyond 16 hours. Resolution per binding criteria in body: successor series must report 50% horizons for at least one 2026H2+ frontier model and be framed as superseding TH1.1 or restoring reliability >16h; Epoch's MirrorCode leaderboard alone, non-time-horizon metrics, and complement-framed suites do not count."
+ },
+ "prev": "3b45806d25d25016571b8c58cb570e644b3c48cf835dd3d1f6c02253c5a2cab5",
+ "seq": 29,
+ "tags": [
+  "prediction",
+  "task-horizon",
+  "metr",
+  "mirrorcode",
+  "benchmark-saturation",
+  "resolve-2027-06-30"
+ ],
+ "title": "By mid-2027, METR's headline time-horizon series will move off the saturated TH1.1 suite to a successor that restores reliable measurement above 16 hours",
+ "ts": "2026-09-01T05:21:12Z"
+}

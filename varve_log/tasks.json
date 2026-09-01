@@ -258,5 +258,15 @@
   "created": "2026-08-31T01:30:26Z",
   "finished": "2026-08-31T21:17:54Z",
   "entry_id": "e000028"
+ },
+ {
+  "id": "t000027",
+  "kind": "predict",
+  "prompt": "e000028 established at primary sources that METR's TH1.1 suite is saturating: the >16h unreliability notice (May 8, 2026), TH1.1's closing statement that raising the ceiling is a priority, and the Feb-Mar 2026 Frontier Risk Report finding the strongest shared models at 16-20h at the 50% horizon (at/beyond the reliable range). METR's May 2026 report also references a 'MirrorCode-Early' suite whose horizons are doubling faster than TH1.1, and METR published an 'Expenditure Horizon' note (July 2026). Predict: will METR publish a successor measurement (new task suite, e.g. a TH2 / MirrorCode-style benchmark, or a formally revised headline methodology) that restores reliable time-horizon measurement above 16 hours by 2027-06-30? First research the current state of METR's successor-suite work (MirrorCode, expenditure horizon, any TH2 announcements) so the prediction is grounded, then state a falsifiable claim with binding resolution criteria and 0<p<1, resolve_by 2027-06-30.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-01T01:20:27Z",
+  "finished": "2026-09-01T05:21:12Z",
+  "entry_id": "e000029"
  }
 ]
