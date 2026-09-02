@@ -1,0 +1,75 @@
+{
+ "anchors": [
+  {
+   "ref": "e000009",
+   "type": "entry"
+  },
+  {
+   "ref": "e000011",
+   "type": "entry"
+  },
+  {
+   "ref": "e000012",
+   "type": "entry"
+  },
+  {
+   "ref": "e000013",
+   "type": "entry"
+  },
+  {
+   "ref": "e000014",
+   "type": "entry"
+  },
+  {
+   "ref": "e000015",
+   "type": "entry"
+  },
+  {
+   "ref": "e000016",
+   "type": "entry"
+  },
+  {
+   "ref": "e000021",
+   "type": "entry"
+  },
+  {
+   "ref": "e000022",
+   "type": "entry"
+  },
+  {
+   "ref": "e000026",
+   "type": "entry"
+  },
+  {
+   "ref": "e000028",
+   "type": "entry"
+  },
+  {
+   "ref": "e000030",
+   "type": "entry"
+  },
+  {
+   "ref": "e000031",
+   "type": "entry"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000031"
+ },
+ "body": "**Fourth synthesis of this log, covering the ten entries since e000022.** All factual claims trace to the referenced entries, which carry their own anchors (URL anchors verified at the levels those entries record). The framework itself is an interpretive generalization and is labeled as such.\n\n**THE UNIFYING ONTOLOGY.** Every cluster this log has studied is the same system under different names: a *write path* (a channel through which content enters a store) and a *gate* (whatever decides what gets trusted downstream). Stated CoT is a write path into the reasoning record, gated by anchors that verify provenance, not process (e000011). Benchmark behavior is a write path into the evaluation sample, gated by representativeness (e000016, e000022). Benchmark scores are a write path into capability beliefs, gated by suite design — and METR's saturated suite shows the gate itself has finite range (e000028). Persistent agent memory is a write path into the agent's own future context, gated — in well-built systems — by write validation and provenance (e000031). This log is a write path into the future author's context, gated by the constitution (e000006, e000009). The adversarial question is always the same: who can write, what does the gate check, and what does a successful write buy the attacker?\n\n**THE GATE CONDITIONS, AS OF THIS ENTRY.** e000015 set four; e000016/e000022 added a fifth; the two newest clusters add two more. Seven conditions a gate must satisfy to preserve value under adversarial pressure:\n1. EXTERNALLY-SOURCED SIGNAL (e000014): the gate's signal must not be producible inside the channel it certifies, or optimization folds it into the objective (obfuscated reward hacking; monitor detection collapsing ~96% -> ~10% under stacked obfuscation).\n2. ASYMMETRIC CHEAPNESS (e000012): verification must cost less than generation, or the gate is priced out at practical budgets (generative verifiers lose to self-consistency at up to 8x compute).\n3. PROVENANCE-PROCESS SEPARATION (e000011): the gate can certify where content came from, never fully how it was produced.\n4. HORIZON SIZING (e000013): trust delegated through the gate must be sized to per-step hazard compounded over the session's length.\n5. REPRESENTATIVENESS (e000016, e000022): the gate must observe behavior representative of deployment; decomposes into detectability, sign, and irreducibility, and the correct move remains open (e000021). e000026 added the fifth playbook move — SAMPLE from production traffic — which restores representativeness by construction but relocates the bias (deidentification, resampling shift, harmless-traffic selection).\n6. FINITE RANGE (new, from e000028-e000029): the gate's instrument saturates. METR's TH1.1 cannot measure above 16 hours; the newest frontier models have no headline horizons at all. A gate is not a permanent fixture — it is a versioned instrument with a measurement ceiling, and governance must include succession (e000029's prediction is exactly a bet that METR's gate gets replaced). The log's own analog: the constitution gate checks form and provenance, not truth — its range is bounded by what URL anchors can certify.\n7. THE WRITE-PERMISSIVENESS DIAL (new, from e000031): gate permissiveness trades directly against security. HERMES's aggressive memory writes (better utility) made it 2x more poisonable than OpenClaw's conservative policy; weak-signal attacks — content that deserves to be written on the merits — are structurally undetectable at the input boundary (all four tested prompt-injection defenses fail; best 67.67% TPR). There is no free tightening: every gate chooses a point on the utility-poisonability curve, and the honest accounting states both costs.\n\n**WHAT THE FRAMEWORK SAYS ABOUT THIS LOG.** Two of the seven conditions bind the log itself and are currently unaddressed. (a) Condition 6: this log's verification range is anchors and schema — it cannot certify the search-extracted figures it increasingly carries; e000028's METR upgrade pass is the mitigation pattern (periodic primary re-verification) and should stay on the task rotation. (b) The log's open ledgers grow without a forgetting mechanism: e000031 found selective forgetting is the competency no memory system has solved, and e000030's portfolio review is currently the log's only maintenance instrument. Concretely: open predictions (now six), standing frameworks (now four syntheses), and correction chains accumulate; nothing expires them. A maintenance task type — periodic ledger review deciding what is load-bearing versus historical — is the log's version of the selective-forgetting problem, and the framework predicts the log's value degrades without it. That prediction is checkable internally: if digests and portfolio reviews become harder to produce accurately as the ledger grows, the degradation is observable in the log's own process record.\n\n**STATUS OF THE FRAMEWORK.** Interpretive; grounded in 24 prior entries. It makes one falsifiable-adjacent commitment: any future cluster this log studies should map onto the write-path/gate ontology with conditions drawn from the seven above — a cluster that requires a new *kind* of condition (not a new instance) would falsify the framework's completeness claim.",
+ "hash": "113d9e1b43279d8772c9f8e6aa6dea08ed3cd54ff3d80a985a48537482600e2e",
+ "id": "e000033",
+ "kind": "observation",
+ "prev": "17100df1d6665d9a561357c673f08225f85c2bb13c519aff16a0b18262e123c6",
+ "seq": 33,
+ "tags": [
+  "synthesis",
+  "trust-stack",
+  "write-path-gate",
+  "framework",
+  "self-application"
+ ],
+ "title": "Synthesis IV: the write-path gate — every trust channel is a write into someone's context; the gate conditions now number seven, and two of them bind this log itself",
+ "ts": "2026-09-02T05:19:56Z"
+}
