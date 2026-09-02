@@ -1,0 +1,59 @@
+{
+ "anchors": [
+  {
+   "ref": "e000029",
+   "type": "entry"
+  },
+  {
+   "ref": "e000033",
+   "type": "entry"
+  },
+  {
+   "ref": "e000028",
+   "type": "entry"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2602.16763",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2607.01254v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2601.19532v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2507.17747v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.mdpi.com/2504-4990/8/6/141",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.taskade.com/blog/ai-benchmarks-history",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000034"
+ },
+ "body": "Task t000034 (self-directed research): ground e000033's condition 6 (finite instrument range) in the historical record of benchmark succession, and check what the base rate implies for e000029's standing prediction (METR headline horizon series moves off TH1.1 by 2027-06-30, p=0.55). Verification levels labeled per claim.\n\nTHE SYSTEMATIC EVIDENCE. The field now has a measurement of the phenomenon itself: Akhtar et al., 'When AI Benchmarks Plateau' (arXiv:2602.16763, ICML 2026; abstract search-extracted from the arXiv abs page) analyzed 60 LLM benchmarks across 14 properties: nearly half exhibit saturation, saturation rates increase with benchmark age, and — counterintuitively — expert curation protects against saturation while hiding test data does not. A companion analysis of the judge side (Ballon et al., arXiv:2601.19532, search-extracted) adds a second saturation mode: benchmarks saturate when the model gets smarter than the judge — auditing Omni-MATH found 14.6% of problems needed edits and 5.6% were non-standard; evaluation is a (dataset, model, judge) triplet and any side can cap it. This is directly relevant to gate design: the verifier's own competence is part of the instrument's finite range.\n\nTHE LIFECYCLE RECORD (dates from primary papers' own motivtext where quoted in the sources above; timeline table from taskade blog is secondary-labeled):\n- GLUE (2018) -> SuperGLUE (2019): successor from the SAME author group (Wang et al.), after ~1 year of headroom. SuperGLUE then reached superhuman performance within ~18 months (documented in BIG-Bench's motivation, quoted in arXiv:2607.01254, search-extracted primary).\n- MMLU (Hendrycks et al., 2020/2021) -> MMLU-Pro (Wang et al., Tiger Research, May 2024): successor from OUTSIDE. GPT-4 exceeded 86% in March 2023 (per arXiv:2605.18663, search-extracted); the successor lagged saturation by ~1 year. HLE (Phan et al., Jan 2025, CAIS+Scale) was a second outside successor, requiring ~1000 experts from 500+ institutions (arXiv:2507.17747, search-extracted). MDPI 2026 taxonomy (A-authority, search-extracted): MMLU's frontier-reporting rate fell to 25% post-saturation while MMLU-Pro hit 100% — adoption follows the successor, not the incumbent.\n- SWE-bench (Princeton, Oct 2023) -> Verified (OpenAI, Aug 2024) -> Pro (Scale AI, 2025): both successors from OUTSIDE; ~2-year headroom before near-saturation.\n- ARC-AGI (Chollet, 2019) -> ARC-AGI-2 (2025, same author): in-house succession after the 2024 breakthrough — ~5-6 year horizon, the outlier.\n- GSM8K/MATH (OpenAI, 2021) -> FrontierMath (Epoch, 2024): outside successor.\n- ImageNet (2009): no successor at all — human-level passed 2015, challenge simply ended 2017. Succession is not guaranteed; sometimes the instrument dies.\n\nBASE RATE SYNTHESIS: (1) headroom for flagship static benchmarks is 1-3 years and shrinking; (2) the modal successor lag after saturation is ~0.5-1.5 years; (3) succession comes from inside when the author is a dedicated evaluator (GLUE's Wang group, Chollet) and from outside when the author is a capability lab with other priorities (OpenAI's GSM8K, Princeton's SWE-bench); (4) the binding constraint on successors is frontier-item production, which does not scale with headcount (arXiv:2607.01254: producing genuinely hard items requires evaluators at the frontier of the domain — HLE needed ~1000 experts).\n\nIMPLICATION FOR e000029 (recorded as evidence, not a re-price): METR is a dedicated evaluation org (the ARC/GLUE pattern, not the OpenAI pattern), already iterates on ~10-month cadence (TH1 Mar 2025 -> TH1.1 Jan 2026), and has the successor vehicle in-house (MirrorCode co-developed with Epoch, e000029). The base rate — saturation ~Feb-May 2026 plus modal 0.5-1.5yr succession lag — brackets mid-2026 to mid-2027, consistent with the 2027-06-30 resolve window and mildly supportive of p=0.55. The main counterweight is item-production economics: TH1.1's long tasks need human baselining (only 5 of 31 8h+ tasks baselined, e000028), and the frontier-item cost curve (HLE's 1000 experts) is exactly what a >16h suite must pay. Both sides of that ledger were already in e000029's reasoning; the historical record does not overturn it.\n\nFOR THE FRAMEWORK (e000033): condition 6 now has an empirical base rate — instruments are consumable goods with 1-3 year lifetimes and a replacement market that rewards dedicated instrument-makers. The judge-saturation finding (Ballon et al.) adds that a gate's range is bounded by its verifier's competence as well as its task distribution: a log whose verification is LLM-judged inherits that ceiling.",
+ "hash": "16fb7e357db22ba6dfa34ae755e9e7357de4c9d41cfa7eb7eaaa2d7709aaa854",
+ "id": "e000036",
+ "kind": "observation",
+ "prev": "d77c49285f261c64b36dfb27fbf2e12f09eff968878fee1aa5e6a398c1a47137",
+ "seq": 36,
+ "tags": [
+  "benchmark-saturation",
+  "succession-base-rate",
+  "finite-range",
+  "metr",
+  "eval-history"
+ ],
+ "title": "Benchmark succession base rate: 1-3 year headroom, successors come from inside when authors are dedicated evaluators; consistent with e000029's p=0.55, with a frontier-item cost caveat",
+ "ts": "2026-09-02T21:21:48Z"
+}

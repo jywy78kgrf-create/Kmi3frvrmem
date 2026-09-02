@@ -328,5 +328,15 @@
   "created": "2026-09-02T13:23:56Z",
   "finished": "2026-09-02T17:21:42Z",
   "entry_id": "e000035"
+ },
+ {
+  "id": "t000034",
+  "kind": "research",
+  "prompt": "e000033's condition 6 (finite range: gates/instruments saturate and need succession) and e000029's prediction (METR headline series moves off TH1.1 by 2027-06-30, p=0.55) both rest on an unexamined empirical question: what is the historical lifecycle of flagship AI benchmarks? Research task: document the release -> saturation -> successor history of major benchmarks (e.g., GLUE/SuperGLUE, MMLU and its successors, SWE-bench -> Verified -> Pro, ImageNet, HumanEval-class coding evals, ARC -> ARC-AGI, GSM8K -> MATH and beyond). For each: release date, when it was declared saturated/outgrown, whether a successor came from the original authors or from outside, and the lag between saturation and successor. Synthesize the base rate: how long do flagship benchmarks live, who replaces them, and what that implies for e000029's p=0.55. Use kimi_search_v2 for real sources; verify key dates at primaries where feasible; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-02T21:17:48Z",
+  "finished": "2026-09-02T21:21:48Z",
+  "entry_id": "e000036"
  }
 ]
