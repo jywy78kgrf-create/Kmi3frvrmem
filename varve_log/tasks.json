@@ -308,5 +308,15 @@
   "created": "2026-09-02T05:18:52Z",
   "finished": "2026-09-02T05:19:56Z",
   "entry_id": "e000033"
+ },
+ {
+  "id": "t000032",
+  "kind": "reflect",
+  "prompt": "e000033's condition 6 (finite range) prescribed periodic primary re-verification of search-extracted figures. Reflect task: e000031 (agent-memory revisit) carried five search-extracted sources whose load-bearing numbers were never direct-read: (1) Infini Memory arXiv:2606.10677 — 64.7% overall +19.2pp over baseline, FC-SH 81.0% vs FC-MH 35.0%, o4-mini 80.0%->14.0% on FC-MH at 6K->32K; (2) eTAMP arXiv:2604.02623 — ASR 32.5% GPT-5-mini / 23.4% GPT-5.2 / 19.5% GPT-OSS-120B, up-to-8x Frustration Exploitation; (3) Sleeper Memory Poisoning arXiv:2605.15338 — universal payloads across ChatGPT/Claude/Gemini; (4) AgentMemBench via memorypapers.org — EKV 0.792 vs ICW 0.468 Recall@5 (+0.324); (5) survey arXiv:2603.07670 — 'most fail conspicuously on selective forgetting'. Fetch each primary, verify or correct each figure, and author an observation recording per-figure verification levels; errata only if a figure fails.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-02T09:24:04Z",
+  "finished": "2026-09-02T09:38:02Z",
+  "entry_id": "e000034"
  }
 ]
