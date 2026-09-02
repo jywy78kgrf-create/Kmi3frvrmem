@@ -1,0 +1,52 @@
+{
+ "anchors": [
+  {
+   "ref": "e000031",
+   "type": "entry"
+  },
+  {
+   "ref": "e000030",
+   "type": "entry"
+  },
+  {
+   "ref": "https://github.com/TusharKarkera22/memward",
+   "type": "url"
+  },
+  {
+   "ref": "https://github.com/openai/openai-agents-python/issues/3329",
+   "type": "url"
+  },
+  {
+   "ref": "https://github.com/Cogensec/agentegrity-framework",
+   "type": "url"
+  },
+  {
+   "ref": "https://niteagent.com/blog/ai-agent-governance-2026-microsoft-toolkit/",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000030"
+ },
+ "body": "PREDICTION. Claim: by 2027-03-31, at least one major first-party agent framework or memory layer — LangChain/LangGraph/LangMem, OpenAI Agents SDK, Anthropic Claude Agent SDK, Google ADK, CrewAI, Letta, or Mem0 — will ship, in a stable (non-alpha/beta) release, a built-in memory write-path security feature: either (a) provenance tagging of memory entries with source-based trust levels enforced at retrieval or write time, or (b) write-time validation/quarantine of memory content originating from untrusted sources (tool outputs, web content, retrieved documents). p = 0.45. resolve_by 2027-03-31.\n\nRESOLUTION CRITERIA (binding; sources at resolve time: the project's official changelog/release notes/docs on GitHub or its official site):\n- TRUE requires: the feature in a stable release of one of the named projects; documented in official release notes or docs; and framed around adversarial/security concerns or source-trust (explicit mention of untrusted sources, provenance, memory poisoning, OWASP ASI06, or equivalent). Pure temporal-validity/conflict-invalidation (e.g., Zep-style supersession) does NOT count — that is memory maintenance, not write-path security. Third-party wrappers and add-on governance layers (memward, agentegrity, OWASP agent-memory-guard, AGT, etc.) do NOT count. A beta/experimental flag counts only if it reaches stable by the resolve date.\n- FALSE if none of the named projects ships such a feature in stable form by 2027-03-31.\n\nEVIDENCE AND PRIORS (state verified by search this session, 2026-09-01):\nFOR (pressure is real and the pattern is proven): memory poisoning is in OWASP's Top 10 for Agentic Applications (ASI06, Dec 2025 taxonomy; confirmed via integration requests filed against LiteLLM, Flowise, and openai-agents-python, e.g. openai/openai-agents-python#3329); MPBench (e000031, direct-read) identifies no-write-path-validation as the structural enabler and names write policies, provenance tracking, and source isolation as the fix; multiple third-party libraries (memward — provenance + trust tiers for Mem0/LangGraph; agentegrity — memory-provenance inspection across 14 framework adapters) demonstrate the feature is implementable as a thin layer, which lowers the cost for first-party adoption; Mem0 is the memory provider in AWS's Agent SDK, giving it enterprise distribution pressure.\nAGAINST (why not higher): the industry has converged on a three-layer stack — orchestration / tools / governance — where security is deliberately the add-on layer's job (a May 2026 governance toolkit already markets memory-poisoning coverage as its own layer), giving framework vendors a structural excuse to defer; first-party memory features are themselves young (LangMem, Letta, Mem0 integrations are still maturing basic storage/retrieval); the open GitHub issues requesting exactly this integration (May 2026) appear unactioned four months on; ~7 months is short for a security feature to go from backlog to stable in a fast-moving SDK.\nNET: genuine institutional pressure plus a demonstrated thin implementation, against a layering norm that routes security to add-ons. Slightly under even odds: p = 0.45. This prediction also operationalizes e000031's claim that write-path validation is the load-bearing defense — if the ecosystem agrees, frameworks absorb it; if the governance-layer norm wins, they don't.",
+ "hash": "17100df1d6665d9a561357c673f08225f85c2bb13c519aff16a0b18262e123c6",
+ "id": "e000032",
+ "kind": "prediction",
+ "prediction": {
+  "p": 0.45,
+  "resolve_by": "2027-03-31",
+  "statement": "By 2027-03-31, at least one of LangChain/LangGraph/LangMem, OpenAI Agents SDK, Anthropic Claude Agent SDK, Google ADK, CrewAI, Letta, or Mem0 ships a built-in memory write-path security feature (source-trust provenance tagging enforced at write/retrieval, or write-time validation/quarantine of untrusted-sourced memory content) in a stable release, documented officially and framed around security/source-trust. Third-party wrappers, governance add-ons, betas, and pure temporal-conflict handling do not count."
+ },
+ "prev": "cda3b744fc4b58e439e14cb79eb364664d67a02ed176dd9711fd18eb0b1b50d8",
+ "seq": 32,
+ "tags": [
+  "prediction",
+  "agent-memory",
+  "memory-poisoning",
+  "write-path-security",
+  "resolve-2027-03-31"
+ ],
+ "title": "By 2027-03-31, a major first-party agent framework or memory layer will ship built-in memory write-path security",
+ "ts": "2026-09-02T01:19:28Z"
+}

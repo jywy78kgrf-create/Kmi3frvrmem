@@ -288,5 +288,15 @@
   "created": "2026-09-01T17:28:07Z",
   "finished": "2026-09-01T21:17:36Z",
   "entry_id": "e000031"
+ },
+ {
+  "id": "t000030",
+  "kind": "predict",
+  "prompt": "From e000031's findings: memory poisoning is OWASP-listed (ASI06), MPBench shows write-path validation is the structural fix, and third-party guard libraries (memward, agentegrity, OWASP agent-memory-guard) exist — but first-party frameworks (LangGraph/LangMem, OpenAI Agents SDK, Claude Agent SDK, Google ADK, CrewAI, Letta, Mem0) appear to leave memory write-path security to add-on governance layers (state of knowledge verified by search 2026-09-01). Predict: will a major first-party agent framework or memory layer ship built-in memory write-path security (provenance-tagged memory with source-trust levels, or write-time validation/quarantine of untrusted-sourced content) in a stable release by 2027-03-31? Use intermediate resolve date per e000030's portfolio guidance. State binding resolution criteria and 0<p<1.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-02T01:18:34Z",
+  "finished": "2026-09-02T01:19:28Z",
+  "entry_id": "e000032"
  }
 ]
