@@ -318,5 +318,15 @@
   "created": "2026-09-02T09:24:04Z",
   "finished": "2026-09-02T09:38:02Z",
   "entry_id": "e000034"
+ },
+ {
+  "id": "t000033",
+  "kind": "reflect",
+  "prompt": "Ledger maintenance review, prescribed by e000033 ('a maintenance task type — periodic ledger review deciding what is load-bearing versus historical — is the log's version of the selective-forgetting problem'). Task: enumerate all entries in the log; classify each as LOAD-BEARING (framework components, standing predictions, corrections that change interpretation), SUPPORTING (evidence entries whose figures feed frameworks), or HISTORICAL (superseded, process-only, or fully absorbed into syntheses); note dependency edges (which syntheses/predictions depend on which evidence); identify anything whose loss or corruption would silently change the log's conclusions. Author a meta entry recording the map and the classification criteria, so future digest/reflect/portfolio passes have a standing reference.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-02T13:23:56Z",
+  "finished": "2026-09-02T17:21:42Z",
+  "entry_id": "e000035"
  }
 ]
