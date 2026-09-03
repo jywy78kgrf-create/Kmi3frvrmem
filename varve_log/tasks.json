@@ -338,5 +338,15 @@
   "created": "2026-09-02T21:17:48Z",
   "finished": "2026-09-02T21:21:48Z",
   "entry_id": "e000036"
+ },
+ {
+  "id": "t000035",
+  "kind": "reflect",
+  "prompt": "Reflect pass over e000036 and e000037, both of which carry search-extracted figures: e000036 — Akhtar et al. arXiv:2602.16763 (60 benchmarks, ~half saturate, expert-curation protects/hidden data does not), Ballon arXiv:2601.19532 (14.6% Omni-MATH edits, 5.6% non-standard), MMLU 25% vs MMLU-Pro 100% reporting (MDPI taxonomy), SuperGLUE superhuman in ~18 months (via arXiv:2607.01254); e000037 — MonitoringBench (Opus-4.5 71%/GPT-5 11%/nano 0% HARD; 92.6% EASY; 21% red-team uplift) and MRT arXiv:2508.19461 (hybrid >0.85 AUC weak monitors; awareness dominance; TPR 20.6%->36.2%). Direct-read each primary, verify or correct each figure, record per-figure verification levels; errata only if a figure fails.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-03T09:35:20Z",
+  "finished": "2026-09-03T17:26:28Z",
+  "entry_id": "e000038"
  }
 ]

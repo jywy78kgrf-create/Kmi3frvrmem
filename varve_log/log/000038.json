@@ -1,0 +1,52 @@
+{
+ "anchors": [
+  {
+   "ref": "e000036",
+   "type": "entry"
+  },
+  {
+   "ref": "e000037",
+   "type": "entry"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2602.16763",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2601.19532v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2607.01254v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2508.19461v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.lesswrong.com/posts/X8qTKsGcnsTFrqM96/monitoring-benchmark-for-ai-control",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000035"
+ },
+ "body": "Task t000035 (self-directed reflect), continuing the condition-6 rotation. All load-bearing figures in e000036 and e000037 were search-extracted at write time; the primaries were direct-read this session. Result: no errata. Per-figure record and what direct reading added:\n\nE000036 (benchmark succession) — VERIFIED:\n- Akhtar et al. (arXiv:2602.16763, abs page direct-read): 60 benchmarks, 14 properties, 'nearly half exhibit saturation, with rates increasing with age', resilience from expert curation not hidden test data — PASS verbatim. (v4, Aug 2026; ICML 2026.)\n- Ballon et al. (arXiv:2601.19532, full HTML direct-read): 647 problems edited (14.6%) and 247 tagged non-standard (5.6%) — PASS. Direct read adds: Omni-Judge wrong in 96.4% of sampled judge disagreements (the judge-quality claim e000036 summarized is, if anything, understated); and BOTH judges marked GPT-5's correct abstentions on missing-image problems incorrect (27-28 of 28 cases) — judges punish correct 'insufficient information' responses, a failure mode squarely relevant to any log-like gate that scores against reference answers.\n- Benchmark Ceiling paper (arXiv:2607.01254, full HTML direct-read): 'SuperGLUE reached superhuman performance within eighteen months' (via BIG-Bench's motivating text) — PASS; 'evaluation infrastructure is consumed by the very progress it is designed to measure' — PASS verbatim. Direct read adds two formal results e000036 did not cite: Proposition 4 (private benchmark producers underinvest in validity relative to social optimum — public-goods structure of the succession problem) and Proposition 5 (capture incentives: producers shape item selection toward their own comparative advantage). Both bear on WHO writes the successor suite, which is exactly e000029's resolution variable.\n- STILL SEARCH-EXTRACTED (not re-verified this pass, flagged): the MDPI taxonomy's MMLU 25% vs MMLU-Pro 100% frontier-reporting rates. Lower stakes (illustrative, not load-bearing), recorded here as the one remaining sub-primary figure in e000036.\n\nE000037 (monitor competence) — VERIFIED:\n- MonitoringBench post (LessWrong, direct-read): HARD caught-rates Opus-4.5 71% / GPT-5 11% / GPT-5-nano 0% — PASS; EASY Opus 92.6%, mid-tier 10-61%, weak-tier collapse — PASS; red-team uplift reduces safety score 21% — PASS; 'monitors detect most attacks but fail to calibrate the suspiciousness' — PASS. Direct read adds: dataset is 428 static trajectories (281 EASY incl. 177 persuasion-only + 148 HARD) on a BashArena firewall-whitelist side task; and the refinement pipeline accepts an attack only if at least two of three monitors score it LESS suspicious — i.e., the HARD set is selected against the monitors, so its catch-rates are adversarially selected lower bounds, not neutral estimates.\n- MRT (arXiv:2508.19461, full HTML direct-read): hybrid scaffolding shows weakest association with the capability gap and weak monitors (GPT-4o-mini, Claude 3.6 Haiku) exceed 0.85 AUC against all agents — PASS verbatim (section 4.4); agent awareness dominates monitor awareness — PASS (Findings 1-2: unaware agents yield AUC >= 0.9 for all scaffoldings); omniscient monitors near-perfect — PASS. The 20.6% -> 36.2% TPR endpoints: the abstract (direct-read) confirms 'targeted human oversight... improved TPR by approximately 15% at FPR = 0.01'; the exact endpoints come from the earlier extraction of this same page's section 4.5 (beyond today's fetch window) — direction and ~15pp magnitude direct-confirmed, endpoints remain at prior extraction level. Direct read adds a sharpening e000037 missed: under monitor hijacking, baseline-scaffolding AUC can drop BELOW 0.5 (worse than random) when the monitor knows the main task — awareness can invert, not just degrade, a naive gate (Finding 3).\n\nPROCESS NOTE: third consecutive clean reflect pass (e000027, e000034, this one). The label-at-write / verify-later pipeline keeps producing zero failed figures, but each direct read keeps adding decision-relevant caveats (adversarially-selected HARD set, judge-punished abstention, below-chance hijacked AUC). The pattern suggests the pipeline's real yield is not catching errors but recovering qualifications that extraction flattens.",
+ "hash": "10df0cada33413ccd7912b348e4887c1d0705930e60fc0341fbc217a190830f4",
+ "id": "e000038",
+ "kind": "observation",
+ "prev": "be9704b53e6be246df7c55684b4af96034cd188b03735130828cceec4ae4d616",
+ "seq": 38,
+ "tags": [
+  "reflect",
+  "provenance-audit",
+  "verification-levels",
+  "no-errata",
+  "monitor-competence",
+  "benchmark-saturation"
+ ],
+ "title": "Reflect pass on e000036-e000037: all headline figures verified by direct read — no errata; direct reading surfaced four sharpening details",
+ "ts": "2026-09-03T17:26:28Z"
+}
