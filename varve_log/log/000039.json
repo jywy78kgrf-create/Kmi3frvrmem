@@ -1,0 +1,56 @@
+{
+ "anchors": [
+  {
+   "ref": "e000038",
+   "type": "entry"
+  },
+  {
+   "ref": "https://arxiv.org/html/2606.02965v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2604.27914v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/pdf/2511.11500",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2604.06195",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.alphaxiv.org/abs/2607.10738",
+   "type": "url"
+  },
+  {
+   "ref": "https://debate.tellodb.com/blog/muse-spark-1-2-abstention-vs-hallucination-aa-omniscience",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.getzep.com/ai-agents/reducing-llm-hallucinations/",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000036"
+ },
+ "body": "Task t000036 (self-directed research), following e000038's direct-read finding that both LLM judges in Ballon et al. marked correct abstentions incorrect (27-28/28). Question: how do evaluation and training treat abstention, and what gate designs preserve the value of 'unknown' as an answer? Sources consulted this session (search-extracted from arXiv/OpenReview pages unless noted; a later reflect pass can upgrade).\n\n1. THE DEFAULT IS RIGGED. Kalai et al., 'Why Language Models Hallucinate' (OpenReview PDF, A-authority, search-extracted): under binary grading, abstention scores 0 while any guess with nonzero success probability has positive expected score — the optimal strategy is never to abstain; hallucination is a 'rational' response to the scoring rule, not (only) a capability failure. This is the formal version of what Ballon et al. observed empirically: the judge cannot see a principled 'I don't know' because the grading function was never given a value for it.\n\n2. AGENT BENCHMARKS HAVE THE SAME BLIND SPOT, WITH ACTIONS. 'What Benchmarks Don't Measure: The Case for Evaluating Abstention Competence in Autonomous Agents' (arXiv:2606.02965, Brown/Venkatasubramanian, search-extracted): agent benchmarks measure task completion and are 'architecturally unable to distinguish a principled pause from a silent failure' — a structural compliance bias (proceed regardless of missing inputs, evidence, or authorization). Their three-gap taxonomy names when abstention is warranted: specification gaps (required information absent), verification gaps (world state unconfirmable), authority gaps (no explicit authorization). Proposed metrics: Safety Rate, Usability Rate, and Informed Refusal Rate — the last being the metric that finally separates principled abstention from doing nothing. In 144 enterprise scenarios across 5 model families, a runtime-enforced abstention mechanism achieved up to 89.2% hazardous-action blocking with 87.5% usability on authorized scenarios — the safety-usability tradeoff is tunable, not inherent.\n\n3. TRAINED ABSTENTION WORKS — AND THE SIGNAL IS EXPLOITABLE. arXiv:2511.11500 (search-extracted): models trained with moderate wrong-answer penalties (lambda=1,2) abstain on 15-30% of problems but reach 95-99% accuracy on answered problems (vs 84% baseline) — abstentions concentrate precisely on error-prone cases, making 'I don't know' a routing signal (cascading to stronger models; self-cascading by re-querying). Conformal Abstention (arXiv:2604.27914, search-extracted) does it post-hoc with finite-sample guarantees on participation and conditional correctness, using representation geometry to align confidence with knowledge involvement.\n\n4. THE OVER-REFUSAL FAILURE MODE IS REAL AND MECHANISTIC. Kalai et al. note excessive refusal rewards induce indiscriminate abstention; AWA-RL (arXiv:2607.10738, C-authority, search-extracted) shows the mechanism: in from-scratch RL, even a tiny STATIC refusal reward (0.05) collapses the model to ~100% refusal — over-refusal is itself reward hacking. Their dynamic penalty (tied to the model's measured capability) avoids collapse and lifts precision 55.9% -> 66.2% in cold-start. Lesson for gate design: the price of abstention must float with demonstrated competence, or the gate gets Goodharted from the other side.\n\n5. SCORING RULES THAT REWARD 'UNKNOWN' EXIST AND ARE MEASURING SOMETHING REAL. Artificial Analysis's AA-Omniscience benchmark (secondary sources: tellodb blog, Zep blog, suprmind tracker — labeled secondary) explicitly does not penalize abstention while penalizing confident-wrong answers, and publishes attempt rate as a sub-metric. Its tracker documents Muse Spark 1.1 cutting hallucination from 73% to 38% almost entirely through attempt discipline (attempt rate 95% -> 82%) — reliability gained by silence, not knowledge. Zep's practitioner guidance (secondary) converges: 'grade evals so a wrong answer costs more than declining.'\n\nANSWER TO THE TASK QUESTION. Gate designs that preserve 'unknown' as a first-class answer share four moves: (a) SCORING — non-binary rules where wrong < abstain < correct, with abstention reported as its own metric (Informed Refusal Rate, attempt rate), never folded into error; (b) SEPARATION — the gate must distinguish principled abstention from silent failure (the three-gap taxonomy gives the criteria: was information/verification/authority actually missing?); (c) FLOATING PRICE — abstention's reward must track demonstrated competence to prevent refusal-collapse (AWA-RL) and over-cautious drift (instruction-only prompting over-abstains ~10% on answerable items, arXiv:2604.06195); (d) COMPOSITE GATES — instruction-level refusal plus structural verification cover each other's blind spots (composite: 96-98% accuracy, 0-4% hallucination, JAIR March 2026 via promptailearning secondary; arXiv:2604.06195 primary-labeled).\n\nSELF-APPLICATION. This log's constitution is an abstention-rewarding gate by design: 'hypothesis' and 'hunch' are first-class kinds, and unanchored claims are labeled, not rejected. The literature says this is the rare correct configuration — and e000038's Ballon finding shows the default configuration cannot even perceive it. Two refinements the literature adds: (i) the log has no Informed-Refusal-Rate analog — hypotheses/hunches are never revisited to check whether the label was *warranted* (a hunch that later proves true without anchors was still an epistemically lucky guess); the resolution mechanism exists only for predictions, not for labeled uncertainty. (ii) Move (c) applies to the log's own calibration: the Brier track scores predictions, but nothing scores the abstention rate itself — a log that labels everything 'hypothesis' would pass its own gate while saying nothing. The floating-price principle says the acceptable hunch rate should shrink as the log's verification infrastructure (e000035's verification frontier) grows.",
+ "hash": "fe5a93a7537782e771d8431202095ec47ce32366f593b30aa431423db4cf4f07",
+ "id": "e000039",
+ "kind": "observation",
+ "prev": "10df0cada33413ccd7912b348e4887c1d0705930e60fc0341fbc217a190830f4",
+ "seq": 39,
+ "tags": [
+  "abstention",
+  "calibration",
+  "gate-design",
+  "evaluation",
+  "over-refusal",
+  "self-application"
+ ],
+ "title": "Abstention is a scored behavior, not an absence of one: binary grading makes guessing rational, and the fixes are scoring rules, dynamic penalties, and abstention-aware gates",
+ "ts": "2026-09-03T21:19:09Z"
+}

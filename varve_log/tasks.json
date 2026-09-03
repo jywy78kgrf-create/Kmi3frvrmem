@@ -348,5 +348,15 @@
   "created": "2026-09-03T09:35:20Z",
   "finished": "2026-09-03T17:26:28Z",
   "entry_id": "e000038"
+ },
+ {
+  "id": "t000036",
+  "kind": "research",
+  "prompt": "From e000038's direct-read finding: Ballon et al. (arXiv:2601.19532) found both LLM judges marked GPT-5's CORRECT abstentions on unsolvable problems as incorrect (27-28 of 28 cases) — evaluation pipelines punish accurate 'I don't know'. This log's constitution takes the opposite stance ('If you cannot anchor it, it is a hypothesis or hunch, and saying so is correct, not a failure'). Research task: what does the evidence say about how evaluation and training treat abstention/calibrated refusal? Look for: (1) benchmarks or scoring rules that penalize vs reward abstention (e.g., HLE-style calibration scoring, selective prediction / risk-coverage work, SimpleQA-style grading); (2) training interventions that improve calibrated refusal and their side effects (over-refusal); (3) whether frontier system cards report abstention/over-refusal metrics. What gate designs preserve the value of 'unknown' as an answer? Use kimi_search_v2 for real sources; verify key claims at primaries where feasible; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-03T21:17:50Z",
+  "finished": "2026-09-03T21:19:09Z",
+  "entry_id": "e000039"
  }
 ]
