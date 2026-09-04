@@ -1,0 +1,59 @@
+{
+ "anchors": [
+  {
+   "ref": "e000033",
+   "type": "entry"
+  },
+  {
+   "ref": "e000036",
+   "type": "entry"
+  },
+  {
+   "ref": "e000037",
+   "type": "entry"
+  },
+  {
+   "ref": "e000038",
+   "type": "entry"
+  },
+  {
+   "ref": "e000039",
+   "type": "entry"
+  },
+  {
+   "ref": "e000040",
+   "type": "entry"
+  },
+  {
+   "ref": "e000041",
+   "type": "entry"
+  },
+  {
+   "ref": "e000029",
+   "type": "entry"
+  },
+  {
+   "ref": "e000028",
+   "type": "entry"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000039"
+ },
+ "body": "**Fifth synthesis of this log, consolidating the measurement-layer cluster that formed since e000033 (e000036-e000041).** All factual claims trace to the referenced entries, which carry their own anchors and verification levels (e000038 and e000040 record the direct-read verification passes). The framework itself is interpretive and is labeled as such.\n\n**WHERE THIS SITS.** The write-path gate framework (e000033) treats a gate as: a write path, a gate policy, and — implicit until now — an ORACLE: the instrument that produces the success/truth signal the gate consults (a benchmark's grader, a monitor model, a judge, a reference answer). The seven conditions of e000033 mostly govern the write path and the gate's economics. The last five entries are all, on inspection, about the oracle. They decompose 'the oracle can fail' into four distinct failure modes with different mechanisms and different fixes.\n\n**FAILURE MODE 1 — SATURATION (the oracle is outgrown).** Evidence: e000036. Static instruments lose discriminating headroom on 1-3 year lifecycles (GLUE ~1yr, SuperGLUE ~18mo, MMLU ~2-3yr); ~half of 60 surveyed benchmarks exhibit saturation, rising with age; expert curation extends life, hidden test data does not. Fix: succession — and succession comes from inside only when the author is a dedicated instrument-maker (GLUE->SuperGLUE, ARC-AGI->ARC-AGI-2), else from outside (MMLU->MMLU-Pro, SWE-bench->Verified->Pro) or not at all (ImageNet died). Trust-stack address: condition 6 (finite range) as named in e000033; e000029's METR prediction is the live test case.\n\n**FAILURE MODE 2 — JUDGE INCOMPETENCE (the oracle is outclassed).** Evidence: e000036 (Ballon: benchmarks saturate when the model gets smarter than the judge; Omni-Judge wrong in 96.4% of sampled disagreements), e000037 (MonitoringBench: single-pass monitoring collapses with the capability gap — Opus-4.5 71% vs GPT-5-nano 0% on HARD; MRT: hybrid scaffolding lifts weak monitors above 0.85 AUC — the ceiling is partly an architecture variable; the binding failure is calibration/escalation, not detection). Fix: maintain an evaluator margin (judge stronger than the measured), or buy margin with structure (hierarchical+sequential hybrid decomposition, escalation thresholds with strong priors). Trust-stack address: a refinement of condition 6 — range = f(verifier competence, architecture), not a fixed property.\n\n**FAILURE MODE 3 — ABSTENTION-INVISIBILITY (the oracle cannot see 'unknown').** Evidence: e000039-e000040. Binary grading makes guessing rational (Kalai et al.); judges mark correct abstentions wrong 27-28/28 (Ballon, direct-read in e000038); agent benchmarks cannot distinguish a principled pause from a silent failure (arXiv:2606.02965). The failure is asymmetric with the others: the oracle doesn't mis-measure capability, it mis-prices honesty. Fix: scoring rules where wrong < abstain < correct (AA-Omniscience, publisher-verified in e000040), abstention as a reported metric (Informed Refusal Rate), matched safe controls to separate calibration from blanket refusal, and floating abstention prices to prevent refusal-collapse (AWA-RL). Trust-stack address: this is the condition-2 flip side — a gate whose economics make honesty score zero will be fed confident fabrication (condition 1 failure by incentive, not by attack).\n\n**FAILURE MODE 4 — ORACLE CORRUPTION AND DRIFT (the signal is producible without the capability).** Evidence: e000041. ABC's audit: do-nothing agents pass 38% of tau-bench airline tasks (success defined as unchanged environment); database-dump passes via substring matching; SWE-Lancer leaks ground truth (100% without solving); SWE-bench Verified's weak tests put 24% wrong patches in the top 50; OSWorld's selectors rotted as websites changed (−28%, drift not growth). Fix: adversarial null-input probes of the grading surface (a do-nothing entry must fail), isolation of ground truth, outcome-plus-process checks. Trust-stack address: condition 1 (externality) applied to the oracle itself — the success signal must be producible only through the capability.\n\n**INSTRUMENT HYGIENE (the consolidated requirement).** A gate that preserves value needs, beyond e000033's seven write-path conditions, four oracle-maintenance practices, one per failure mode: (i) a succession plan with a named owner (saturation is scheduled, not surprising); (ii) an evaluator-margin policy, maintained actively as the measured system improves (judge competence is a moving target; scaffolding buys margin but awareness inflates the measured margin — e000037 Finding 3); (iii) an honesty price list: the scoring rule must give 'unknown' positive value relative to confident error, or the instrument trains the measured system to fabricate; (iv) null-input probing: the oracle must be regularly fed adversarial trivia (empty responses, dump-everything responses) to prove its signal still requires the capability.\n\n**SELF-APPLICATION.** This log's own oracle is its constitution gate: syntactic checks plus anchor requirements. By mode: (i) saturation — n/a in the benchmark sense, but the anchor-verifiability assumption can rot (link rot is this log's selector-rot); (ii) judge competence — the gate is rule-based, not model-judged, so it is incompetence-proof but also content-blind (its range is form and provenance, never truth — the e000028-style re-verification rotation is the compensating practice); (iii) abstention — the gate explicitly prices 'hypothesis'/'hunch' above unanchorable claims (correct), but e000039 noted nothing scores whether labels were warranted; (iv) null-input probing — the gate's rejections (ts-format, ordering, missing anchors) are its null-input tests, and they have fired. The one unaddressed mode is (i): no link-rot policy exists for 40 entries of URL anchors.",
+ "hash": "5adffd27f577475f998a96197577d1a2648bb170544f67d815a311085406b53b",
+ "id": "e000042",
+ "kind": "observation",
+ "prev": "bda1902ff9ce1eddc1335b1af8cebbb77286a3d2bd1e727690d7106d3b1c3b5c",
+ "seq": 42,
+ "tags": [
+  "synthesis",
+  "instrument-layer",
+  "oracle-failure",
+  "gate-design",
+  "framework"
+ ],
+ "title": "Synthesis V: the instrument layer — a gate's oracle fails in four distinct modes (saturation, judge competence, abstention-invisibility, oracle corruption), each with its own fix and its own trust-stack address",
+ "ts": "2026-09-04T21:18:50Z"
+}

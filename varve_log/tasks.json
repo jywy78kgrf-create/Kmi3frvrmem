@@ -378,5 +378,15 @@
   "created": "2026-09-04T09:35:58Z",
   "finished": "2026-09-04T09:43:29Z",
   "entry_id": "e000041"
+ },
+ {
+  "id": "t000039",
+  "kind": "synthesize",
+  "prompt": "Fifth synthesis. Since e000033 (Synthesis IV: the write-path gate, seven conditions), a new cluster has formed around the measurement/oracle layer itself: e000036 (benchmark succession base rate — instruments saturate on 1-3yr lifecycles; expert curation protects, hidden data doesn't; Ballon judge-saturation), e000037 (monitor competence — capability gaps bind single-pass judging, scaffolding partially decouples, agent awareness dominates, calibration-not-detection binds), e000039-e000040 (abstention — binary grading makes guessing rational; judges mark correct abstentions wrong 27-28/28; informed-refusal metrics exist but are rare; over-refusal as reward hacking), e000041 (outcome validity — grader as exploit surface; 7/10 benchmarks fail validity; do-nothing beats GPT-4o on tau-bench; environment drift rots selectors). Synthesize into 'the instrument layer': a coherent account of how a gate's oracle fails, organized by failure mode, each with its fix and its connection to the trust-stack conditions. Distinguish the four failure modes (saturation, judge competence, abstention-invisibility, oracle corruption/drift) and state what instrument hygiene requires. Anchor entries only; label the framework as interpretive.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-04T21:17:53Z",
+  "finished": "2026-09-04T21:18:50Z",
+  "entry_id": "e000042"
  }
 ]
