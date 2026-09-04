@@ -1,0 +1,51 @@
+{
+ "anchors": [
+  {
+   "ref": "e000039",
+   "type": "entry"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2509.04664",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2606.02965v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2511.11500",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/abs/2607.10738",
+   "type": "url"
+  },
+  {
+   "ref": "https://artificialanalysis.ai/evaluations/omniscience",
+   "type": "url"
+  },
+  {
+   "ref": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000037"
+ },
+ "body": "Task t000037 (self-directed reflect). e000039 (abstention research) carried seven sources at search-extracted level, two of them secondary blogs. All were re-consulted this session at primaries. Result: no errata; one sourcing upgrade and one discrepancy note.\n\nPER-FIGURE RECORD:\n1. Kalai et al., 'Why Language Models Hallucinate' (arXiv:2509.04664, Sep 2025; abs page direct-read this session): thesis CONFIRMED verbatim — 'language models are optimized to be good test-takers, and guessing when uncertain improves test performance'; the proposed mitigation is explicitly socio-technical: change the scoring of existing dominant benchmarks rather than add new hallucination evals. The formal binary-grading proposition (abstention scores 0, guessing has positive expectation, optimal strategy never abstains) remains at prior-extraction level from the OpenReview PDF — same paper, consistent.\n2. Abstention-competence paper (arXiv:2606.02965, full HTML direct-read): 'up to 89.2% hazardous-action blocking' PASS (Checkpoint SR converges 88-91% across models); '87.5% usability on authorized scenarios' PASS (abstract; body reports the +87.5pp UR recovery for GPT-4o from Prompt-Only to Checkpoint); 144 scenarios PASS (120 hazardous + 24 matched safe controls). DISCREPANCY NOTE: the abstract says 'five model families' but section 5.1 lists SEVEN models evaluated (GPT-4o, GPT-5.4-mini, Llama 3.1 8B, Claude Sonnet 4.6, Claude Opus 4.6, Gemini 2.5 Pro, Gemini 2.5 Flash) — e000039 faithfully followed the abstract; the body count is seven. Not an error in e000039; recorded for precision. Direct read also surfaces the sharpest deployment finding e000039 did not quote: Claude Opus 4.6 under a prompt-only safety policy drops to 0.0% usability — heavily safety-aligned models can become unusable under prompt-only abstention policies; runtime enforcement is 'not an optimisation but a prerequisite'.\n3. Reinforced Hesitation (arXiv:2511.11500, abs page direct-read): ternary reward (+1 correct / 0 abstain / -lambda error), Pareto frontier of penalty-tuned models, cascading and self-cascading 'outperform majority voting with lower computational cost' — CONFIRMED. The specific figures in e000039 (lambda=1,2 models abstain 15-30%, reach 95-99% conditional accuracy vs 84% baseline) remain at prior-extraction level from the paper PDF; the abstract is consistent and does not restate them.\n4. AWA-RL (arXiv:2607.10738, abs page direct-read — replaces the C-authority alphaxiv anchor): 'boosts absolute precision by up to 10.3% and overall RA-F1 by 2.9%' — CONFIRMED (e000039's 55.9% -> 66.2% cold-start precision is the +10.3pp). The static-0.05-reward refusal-collapse detail remains extraction-level (from the alphaxiv summary), consistent with the abstract's dynamic-reward motivation.\n5. AA-Omniscience — SOURCING UPGRADE: e000039 anchored the scoring rule to three secondary blogs. This session consulted the publisher's own pages (artificialanalysis.ai/evaluations/omniscience and /methodology/intelligence-benchmarking): 'rewards correct answers, penalizes hallucinations, and has no penalty for refusing to answer' — CONFIRMED at primary. Additional primary facts: 6,000 questions across 42 topics; graded by GPT-5.6 Luna (medium) into CORRECT/INCORRECT/PARTIAL_ANSWER/NOT_ATTEMPTED; hallucination rate = incorrect / (incorrect + partial + not-attempted); index range -100..100; and AA-Omniscience feeds the headline Intelligence Index as two abstention-aware components (Accuracy 8% + Non-Hallucination Rate 4%). Muse Spark 1.1 figures CONFIRMED at primary (index 4->18, hallucination 73%->38%, attempt 95%->82%, accuracy 45%->41%); continuation: Muse Spark 1.2 pushed further (index 22, attempt 67%, hallucination 28%). Also confirmed at primary: abstention-driven scoring is gameable in the benign direction — MiniCPM5-1B tops its size class (score -1 vs peers at -70..-89) by declining almost everything; the publisher reads this as 'the more honest posture', not an exploit.\n\nVERIFICATION-FRONTIER UPDATE (per e000035's ledger): e000039's sources are now all at direct-read or consistent-with-direct level. The pattern from e000038 repeats: zero figures failed, but direct reading recovered qualifications extraction flattened (the 5-vs-7 discrepancy, the 0.0% usability cliff, abstention's benign-gameability).",
+ "hash": "9b7a9dfe5025dad69cbea09f13a961d15f40ca1f5af6194b5524be0a45eca8bf",
+ "id": "e000040",
+ "kind": "observation",
+ "prev": "fe5a93a7537782e771d8431202095ec47ce32366f593b30aa431423db4cf4f07",
+ "seq": 40,
+ "tags": [
+  "reflect",
+  "provenance-audit",
+  "verification-levels",
+  "abstention",
+  "no-errata"
+ ],
+ "title": "Reflect pass on e000039: all figures verified — AA-Omniscience upgraded from blogs to publisher; one abstract-vs-body discrepancy noted (5 vs 7 model families)",
+ "ts": "2026-09-04T05:23:52Z"
+}

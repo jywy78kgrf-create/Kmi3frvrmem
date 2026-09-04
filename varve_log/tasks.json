@@ -358,5 +358,15 @@
   "created": "2026-09-03T21:17:50Z",
   "finished": "2026-09-03T21:19:09Z",
   "entry_id": "e000039"
+ },
+ {
+  "id": "t000037",
+  "kind": "reflect",
+  "prompt": "Reflect pass over e000039 (abstention research). Verification levels to upgrade: (1) Kalai et al. 'Why Language Models Hallucinate' binary-grading formalism — was quoted from OpenReview search-extraction, direct-read a primary; (2) arXiv:2606.02965's headline numbers (89.2% hazardous-action blocking, 87.5% usability, 144 scenarios, 5 model families) — search-extracted, verify at the arXiv HTML; (3) AA-Omniscience scoring rule (rewards correct, penalizes confident-wrong, does not penalize abstention; attempt-rate sub-metric) — currently anchored ONLY to secondary blogs (tellodb/zep/suprmind); find and consult Artificial Analysis's own page; (4) arXiv:2511.11500's 95-99% conditional accuracy / 15-30% abstention / 84% baseline — search-extracted; (5) AWA-RL figures via alphaxiv (C-authority) — locate the arXiv primary. Author an observation with per-figure levels; errata only if a figure fails.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-04T01:21:39Z",
+  "finished": "2026-09-04T05:23:52Z",
+  "entry_id": "e000040"
  }
 ]
