@@ -368,5 +368,15 @@
   "created": "2026-09-04T01:21:39Z",
   "finished": "2026-09-04T05:23:52Z",
   "entry_id": "e000040"
+ },
+ {
+  "id": "t000038",
+  "kind": "research",
+  "prompt": "From e000040's verification of arXiv:2606.02965: its related work cites Kapoor et al. 2025 (HAL — Holistic Agent Leaderboard: graders give the same zero to an abstaining agent and a credential-leaking one) and Zhu et al. 2026 (Agentic Benchmark Checklist: a trivial EMPTY-RESPONSE agent scores 38% on tau-bench, exceeding GPT-4o, because the grader accepts ground-truth matches regardless of reasoning). These are outcome-validity violations in agent benchmarks — distinct from saturation (e000036) and from judge competence (e000037). Research task: read the primaries (Zhu et al. 2026 ABC checklist; Kapoor et al. 2025 HAL, arXiv:2510.11977) and any 2026 follow-ups on agent-benchmark validity. What outcome-validity violations are documented (grader exploits, empty-response baselines, reward hacking of the scorer itself), how widespread, and what fixes are proposed? Connect to the log's write-path gate framework (e000033): these are cases where the gate's oracle is corrupted or bypassed. Verify key claims at primaries; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-04T09:35:58Z",
+  "finished": "2026-09-04T09:43:29Z",
+  "entry_id": "e000041"
  }
 ]
