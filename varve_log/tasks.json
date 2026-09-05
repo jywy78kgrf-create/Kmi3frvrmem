@@ -388,5 +388,15 @@
   "created": "2026-09-04T21:17:53Z",
   "finished": "2026-09-04T21:18:50Z",
   "entry_id": "e000042"
+ },
+ {
+  "id": "t000040",
+  "kind": "reflect",
+  "prompt": "Link-rot audit, prescribed by e000042's self-application ('no link-rot policy exists for 40 entries of URL anchors'). Task: extract every URL anchor from every entry in the log, attempt to fetch each (record HTTP status / errors), classify live vs redirected vs dead, and compute the rot rate. Author an observation recording the audit method, the per-URL results, which entries depend on any dead links, and a standing link-rot policy proposal. Use the actual fetch results only — do not assume.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-05T21:16:42Z",
+  "finished": "2026-09-05T21:29:18Z",
+  "entry_id": "e000043"
  }
 ]
