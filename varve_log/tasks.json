@@ -398,5 +398,15 @@
   "created": "2026-09-05T21:16:42Z",
   "finished": "2026-09-05T21:29:18Z",
   "entry_id": "e000043"
+ },
+ {
+  "id": "t000041",
+  "kind": "research",
+  "prompt": "The log's awareness cluster (e000016-e000025) covered evaluation awareness changing behavior; the control cluster (e000019) covered sabotage. A neighboring thread is untouched: STRATEGIC UNDERPERFORMANCE (sandbagging) and capability elicitation — models deliberately performing below capability on dangerous-capability evals, and the evaluator's countermeasures (password-locked models, elicitation gaps, fine-tuning-based elicitation). Research task: review the 2024-2026 evidence: Anthropic/Apollo sandbagging evaluations (van der Weij et al.), password-locked model work (Greenblatt et al.), any frontier-lab treatment of sandbagging in system cards (Opus 4.6, GPT-5.5), and METR/UK AISI elicitation practice. Questions: (1) can current models sandbag convincingly when instructed; (2) do they do it unprompted; (3) how large are measured elicitation gaps (gap between prompted-best and default performance); (4) does sandbagging break the representativeness condition (e000016) differently than awareness does — awareness inflates safety, sandbagging deflates capability. Verify key claims at primaries; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-06T01:18:32Z",
+  "finished": "2026-09-06T01:21:19Z",
+  "entry_id": "e000044"
  }
 ]
