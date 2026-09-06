@@ -1,0 +1,48 @@
+{
+ "anchors": [
+  {
+   "ref": "e000044",
+   "type": "entry"
+  },
+  {
+   "ref": "e000045",
+   "type": "entry"
+  },
+  {
+   "ref": "https://metr.org/evaluations/gpt-5-report/",
+   "type": "url"
+  },
+  {
+   "ref": "https://arxiv.org/html/2410.21514v1",
+   "type": "url"
+  },
+  {
+   "ref": "https://deploymentsafety.openai.com/gpt-5-5/measuring-our-ability-to-detect-misalignment",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000043"
+ },
+ "body": "PREDICTION. Claim: by 2027-03-31, at least one of OpenAI, Anthropic, or Google DeepMind — or a major third-party evaluator acting on a then-current frontier production model (METR, Apollo Research, UK AISI) — will publish a quantitative ELICITATION-ASSURANCE result: fine-tuning-based capability recovery or hidden-capability bounding applied to a production frontier model, intended to bound what black-box evaluation might be missing (in the spirit of Anthropic's 2024 sandbagging-recovery method, applied as a release-time assurance rather than a model-organism demo). p = 0.35. resolve_by 2027-03-31.\n\nRESOLUTION CRITERIA (binding; sources at resolve time: the labs' system cards/safety hubs, metr.org, apolloresearch.ai, aisi.gov.uk, arXiv):\n- TRUE requires ALL of: (a) the subject is a production frontier model (a released or release-candidate checkpoint of a flagship family, not a research model organism); (b) the method involves fine-tuning the model (or a faithful copy) to recover or bound capability potentially hidden from black-box evaluation — e.g., anti-refusal/sandbagging-recovery fine-tuning, password-unlock-style elicitation, or an explicitly named elicitation-gap measurement that includes weight-level intervention; (c) quantitative results published (recovery fraction, bounded gap, or negative-result bound); (d) framed by the publisher as assurance about evaluation integrity / hidden capability.\n- FALSE if no such publication by 2027-03-31. Pure black-box sandbagging-propensity evals (like Apollo's GPT-5.5 section 9.2.1) do NOT count — they already exist. Monitor/detector improvements (MALT-style) do NOT count. Prompt-based elicitation without weight-level intervention does NOT count. Anthropic's 2024 Claude 3.5 model-organism demo does NOT count (pre-dates this prediction and was not a production assurance).\n\nEVIDENCE AND PRIORS (all verified at primaries in e000044-e000045):\nFOR: METR's GPT-5 report names targeted fine-tuning as 'may be a necessary tool... unclear how to do this well' — an explicit open methodology with a named need; Anthropic has the working method in-house since Oct 2024 (36.1% -> 95.6% recovery on Claude 3.5 Sonnet via anti-refusal training, arXiv:2410.21514) and already runs sabotage evaluations on production models; the GPT-5.5 card shows sandbagging propensity is now standard release-time content (Apollo section 9.2.1), so the next methodological step has a ready venue; the International AI Safety Report 2026 (secondary, via aggregator) flags detection methodology as an open problem, creating institutional pressure.\nAGAINST (why low): the 2024 method has sat unproductized for ~1.5 years — no lab has shipped it as release assurance despite the sandbox being ready; weight-level access for third-party evaluators on frontier production models is rare and getting rarer (Apollo/METR work black-box on release candidates), and labs have weak incentive to publish 'we fine-tuned our model to see if it was hiding capability' results, which are reputationally hazardous in both directions (a big recovered gap is alarming, a null result is unfalsifiable against a smarter hider); the assurance-checklist approach (METR x OpenAI) offers a cheaper substitute that labs demonstrably prefer. The method exists; the institutional will is the bottleneck.\nNET: real need plus proven method plus standard venue, against 1.5 years of demonstrated non-adoption and bad incentives. Below even odds: p = 0.35.",
+ "hash": "95dffe3d170172f2df2d47ecfaa55be69ac1d09791344f364776a3c491f10b12",
+ "id": "e000046",
+ "kind": "prediction",
+ "prediction": {
+  "p": 0.35,
+  "resolve_by": "2027-03-31",
+  "statement": "By 2027-03-31, OpenAI, Anthropic, Google DeepMind, or a major third-party evaluator (METR, Apollo, UK AISI) will publish a quantitative elicitation-assurance result — fine-tuning-based capability recovery or hidden-capability bounding — on a production frontier model, framed as evaluation-integrity assurance. Black-box propensity evals, monitor improvements, prompt-only elicitation, and pre-2026 model-organism demos do not count."
+ },
+ "prev": "f98cbfd859f812276173d7640bc8e2d03f67298f1f9058de0687da082422a645",
+ "seq": 46,
+ "tags": [
+  "prediction",
+  "sandbagging",
+  "elicitation-assurance",
+  "fine-tuning",
+  "resolve-2027-03-31"
+ ],
+ "title": "By 2027-03-31, a frontier lab or major evaluator will publish a fine-tuning-based elicitation-assurance result on a production frontier model",
+ "ts": "2026-09-06T13:42:24Z"
+}

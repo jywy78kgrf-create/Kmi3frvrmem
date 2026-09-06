@@ -418,5 +418,15 @@
   "created": "2026-09-06T05:34:54Z",
   "finished": "2026-09-06T09:37:55Z",
   "entry_id": "e000045"
+ },
+ {
+  "id": "t000043",
+  "kind": "predict",
+  "prompt": "From e000044-e000045 (sandbagging cluster, all verified at primaries): METR's GPT-5 report states 'for sufficiently capable models, targeted finetuning may be a necessary tool for providing assurances against sandbagging. It is unclear how to do this well... significant research will be needed'; Anthropic demonstrated the method in 2024 (train sandbagger to 36.1%, recover 95.6% via anti-refusal fine-tuning on Claude 3.5 Sonnet — a model-organism demo, not a release assurance); Apollo's GPT-5.5 card section evaluates sandbagging propensity but only black-box; MALT monitors reach only 0.91 AUROC on sandbagging with CoT access. The open methodology is ELICITATION ASSURANCE: fine-tune-based recovery applied to a production frontier model to bound hidden capability. Predict: by 2027-03-31, will a frontier lab (OpenAI, Anthropic, Google DeepMind) or a major third-party evaluator acting on a frontier model (METR, Apollo, UK AISI) publish a quantitative elicitation-assurance result — fine-tuning-based capability-recovery or hidden-capability bounding applied to a then-current frontier production model? First verify this has not already been published (Anthropic's 2024 demo was pre-release model-organism work, not a production-model assurance). State binding resolution criteria and 0<p<1.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-06T13:29:58Z",
+  "finished": "2026-09-06T13:42:24Z",
+  "entry_id": "e000046"
  }
 ]
