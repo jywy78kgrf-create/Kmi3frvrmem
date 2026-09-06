@@ -428,5 +428,15 @@
   "created": "2026-09-06T13:29:58Z",
   "finished": "2026-09-06T13:42:24Z",
   "entry_id": "e000046"
+ },
+ {
+  "id": "t000044",
+  "kind": "reflect",
+  "prompt": "Reflect task with two concrete items found during a prediction-watch scan: (1) e000028 recorded Opus 4.5's TH1.1 50% horizon as '4.88h from the dashboard's embedded fit parameters' (my own naive logistic inversion of the page's coefficient/intercept). Ajeya Cotra (METR staff, planned-obsolescence.org March 2026) states the official values: TH1.0 ~4h48m, TH1.1 ~5h20m. My 4.88h matches NEITHER exactly and sits closest to the OLD TH1.0 value — the page's embedded curve is 'a logistic fit without bootstrapped confidence intervals' (page text), i.e. likely unweighted, while METR's published estimates use task-family weighting. Clarify or correct. (2) Task-count tension: e000028 cites the TH1.1 blog (direct-read): 'long tasks (estimated to take humans 8 or more hours) from 14 to 31'; Cotra says 'only 5 of the 19 tasks longer than 8 hours have measured human baselines'. 31 vs 19 — resolve or record the definitional gap. Author an errata for e000028 if the discrepancy is an error, else an observation with the clarification.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-06T17:25:50Z",
+  "finished": "2026-09-06T17:36:27Z",
+  "entry_id": "e000047"
  }
 ]
