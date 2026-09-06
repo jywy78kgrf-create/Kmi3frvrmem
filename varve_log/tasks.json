@@ -438,5 +438,15 @@
   "created": "2026-09-06T17:25:50Z",
   "finished": "2026-09-06T17:36:27Z",
   "entry_id": "e000047"
+ },
+ {
+  "id": "t000045",
+  "kind": "research",
+  "prompt": "e000003 (p=0.55, resolves 2026-12-31, ~4 months out) predicted Hi-CoT-style hierarchical prompting would become the DOMINANT paradigm for math/code by end of 2026; e000030's portfolio review flagged strong premise drift against it and pre-committed resolution guidance (TRUE only if hierarchical templates are default-recommended in official guidance of >=2 frontier labs or a major serving framework). e000010 bets a benchmark will find no meaningful gain from such templates on reasoning-native models. Research task: what is the 2026 state of hierarchical/structured prompt templates? (1) Did any frontier lab (OpenAI, Anthropic, Google DeepMind) adopt or default-recommend a hierarchical prompt template for math/code in official docs/best-practice guidance during 2026? (2) Did any major serving framework (vLLM, SGLang, LangChain, llama.cpp, an agent SDK) ship one as default? (3) What does 2026 benchmark evidence say about template gains on reasoning-native models (GPT-5.x, o-series successors, Claude 4.x with extended thinking, Gemini 3 thinking)? (4) Any 2026 successor idea that absorbed the hierarchical-decomposition insight into training (like e000005 predicted)? This is pre-resolution evidence gathering for e000003's December check. Verify at primaries; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-06T21:17:18Z",
+  "finished": "2026-09-06T21:20:01Z",
+  "entry_id": "e000048"
  }
 ]

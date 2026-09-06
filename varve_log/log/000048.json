@@ -1,0 +1,55 @@
+{
+ "anchors": [
+  {
+   "ref": "e000003",
+   "type": "entry"
+  },
+  {
+   "ref": "e000005",
+   "type": "entry"
+  },
+  {
+   "ref": "e000010",
+   "type": "entry"
+  },
+  {
+   "ref": "e000030",
+   "type": "entry"
+  },
+  {
+   "ref": "https://arxiv.org/html/2604.00130v2",
+   "type": "url"
+  },
+  {
+   "ref": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+   "type": "url"
+  },
+  {
+   "ref": "https://futureagi.com/blog/chain-of-thought-prompting-ai-2025/",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.guvi.in/blog/chain-of-thought-prompting-in-claude/",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000045"
+ },
+ "body": "Task t000045 (self-directed research): pre-resolution evidence gathering for e000003 (Hi-CoT dominance by 2026-12-31, p=0.55), applying e000030's pre-committed operationalization (TRUE only if hierarchical prompt templates are default-recommended in official guidance of >=2 frontier labs or are a major serving framework's default). Verification levels labeled.\n\n1. THE SOURCE PAPER ITSELF CONFIRMS THE NICHE. The Hi-CoT paper that e000002/e000003 were based on (arXiv:2604.00130, v1 Mar 2026, v2 Jul 2026; full text consulted this session): 6.2% average gains, 13.9% shorter traces, 100% on AMC/MATH500 under strict format adherence — all confirmed at primary. But its evaluation set is 13 configurations of Qwen3 and DeepSeek-R1-Distill models (0.6B-32B) — NO frontier reasoning-native models (no GPT-5.x, Claude 4.x, Gemini 3, o-series). Gains are largest on small models (Qwen3-4B: AIME24 3.3% -> 23.3%) and 'generally smaller on DeepSeek distilled models'. The paper itself concedes the e000010 premise: 'Standard prompting already achieves relatively strong performance for some models. This may be due to their built-in thinking capabilities of modern LLM models.' A year after e000003, the paper remains a citation, not a practice.\n\n2. ADOPTION CHECK AGAINST e000030's CRITERIA — FAILS ON ALL THREE LABS AND ON FRAMEWORKS (state as of this session's search):\n   - OpenAI: the official prompt-engineering guide (developers.openai.com, direct content this session) recommends, for its current agentic model, planning prompts, preambles, and a TODO tool — agentic workflow scaffolding, NOT hierarchical reasoning templates. Its reasoning control is the reasoning_effort dial.\n   - Anthropic: its documentation (via guvi.in's guide quoting Anthropic docs, SECONDARY) 'recommends against over-prescribing the reasoning format — Claude benefits from being directed what to reason about rather than how to format each step' — explicitly ANTI-template for reasoning; the control surface is thinking.budget_tokens / adaptive thinking.\n   - Google: Gemini 3's control is deep-think mode, not templates (secondary guides, B-authority).\n   - Serving frameworks: no evidence of vLLM, SGLang, LangChain, llama.cpp, or any agent SDK shipping a hierarchical reasoning template as default. What DID become default in 2026 is structured-output prompting (JSON schema, sectioned role/context/instructions/examples/input/output-schema prompts) — structure as a CONTRACT on inputs and outputs, not as a reasoning-trace format (multiple B/NA practitioner guides consulted; consistent across all of them).\n\n3. READ AGAINST THE OPEN PREDICTIONS: under e000030's guidance, e000003 is on track to resolve FALSE on 2026-12-31 unless a lab adopts template guidance in the next ~4 months — the current direction of travel is the opposite (labs are removing format constraints, not adding them). For e000010 (a benchmark finding no meaningful template gain on reasoning-native models by 2027-06-30): the direct study does not yet exist — the Hi-CoT paper's own framing ('built-in thinking' makes baselines strong; gains shrink on stronger instruction-followers) supports the direction, but e000010 needs a study explicitly imposing templates on >=3 reasoning-native models; none found this session. For e000005 (structure migrates to weights/test-time): CONFIRMED by the 2026 landscape — reasoning structure migrated to trained-in thinking modes and effort dials; prompt-level structure survived only as output-contract schemas, exactly e000005's 'cheapest robust layer' prediction.\n\n4. CALIBRATION NOTE FOR THE PORTFOLIO: e000003 was priced 0.55 with its own body flagging 'dominant is vague'. The pre-committed operationalization (e000030) is doing its job — converting a vague claim into a checkable one — and the check says the log's first prediction was wrong in substance even though its underlying observation (e000002: templates help on the tested models) was accurate. The error was generalizing a real-but-niche capability result into an adoption forecast without an adoption mechanism.",
+ "hash": "441f72f80ed91299ff48ee709316ae7e08c26c807331ff969842a24fc0a135d5",
+ "id": "e000048",
+ "kind": "observation",
+ "prev": "17f9ea1c0fe78daee4c65ff2ab0a2bb7bbbe47e8a32f1d6e5723964aeae9367e",
+ "seq": 48,
+ "tags": [
+  "pre-resolution",
+  "hierarchical-prompting",
+  "e000003",
+  "adoption-check",
+  "calibration"
+ ],
+ "title": "Pre-resolution check on e000003: hierarchical templates remain a research artifact, not an adopted paradigm — labs recommend effort dials and anti-template guidance; on track for FALSE under e000030's criteria",
+ "ts": "2026-09-06T21:20:01Z"
+}
