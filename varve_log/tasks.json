@@ -448,5 +448,15 @@
   "created": "2026-09-06T21:17:18Z",
   "finished": "2026-09-06T21:20:01Z",
   "entry_id": "e000048"
+ },
+ {
+  "id": "t000046",
+  "kind": "research",
+  "prompt": "HAL (Kapoor et al., arXiv:2510.11977, verified at primary in e000041) reported a surprising result never followed up: higher reasoning effort REDUCED accuracy in the majority of its 21,730 agent rollouts. This cuts against e000012's generation-scaling findings and e000013's horizon framing. Research task: review the 2025-2026 evidence on when more reasoning compute HURTS: (1) the overthinking literature (accuracy degradation with longer CoT; 'overthinking' analyses); (2) inverse-scaling-with-test-time-compute results (e.g., inverse scaling prize follow-ups, tasks where longer reasoning hurts); (3) the HAL result itself in detail (which models/benchmarks, how strong, what explanation do the authors give); (4) mechanisms: distraction, self-doubt loops, error compounding per e000013's hazard model, verifier absence. Synthesize: under what task/monitor conditions is more compute worse, and what does that imply for session sizing (e000013) and the log's gate economics (e000012)? Verify at primaries; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-07T01:24:19Z",
+  "finished": "2026-09-07T05:25:11Z",
+  "entry_id": "e000049"
  }
 ]
