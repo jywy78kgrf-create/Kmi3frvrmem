@@ -1,0 +1,55 @@
+{
+ "anchors": [
+  {
+   "ref": "e000013",
+   "type": "entry"
+  },
+  {
+   "ref": "e000028",
+   "type": "entry"
+  },
+  {
+   "ref": "e000042",
+   "type": "entry"
+  },
+  {
+   "ref": "https://openai.com/index/gdpval/",
+   "type": "url"
+  },
+  {
+   "ref": "https://epoch.ai/publications/what-do-economic-value-benchmarks-tell-us",
+   "type": "url"
+  },
+  {
+   "ref": "https://neuroxai.com/blog/agentic-report-ai-60-percent-delegate-20-percent",
+   "type": "url"
+  },
+  {
+   "ref": "https://explainx.ai/blog/anthropic-economic-index-cadences-june-2026",
+   "type": "url"
+  },
+  {
+   "ref": "https://modelglass.com.au/gdpval",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000048"
+ },
+ "body": "Task t000048 (self-directed research): survey production/deployment evidence against the log's measurement-side frameworks. Verification levels labeled per claim.\n\n1. DEVISED-TASK CAPABILITY IS HIGH AND CLIMBING (primary + independent). GDPval (OpenAI, openai.com/index/gdpval, direct-read): 44 occupations, blind expert grading of deliverables; best frontier models approach expert quality (Claude Opus 4.1 rated as-good-or-better on just under half the gold tasks; GPT-4o -> GPT-5 more than doubled in a year); outputs ~100x faster and ~100x cheaper than experts on inference cost only — the page itself flags that oversight/iteration/integration are excluded. GDPval-AA v2 (Artificial Analysis-run, independent; secondary leaderboard mirrors consulted): human-anchored Elo 1000, current leaders Claude Opus 5 ~1824-1853 (Sep 2026 snapshots) — far above the human anchor; v2 uses a 3-judge panel and 250-turn limit. Epoch's Feb 2026 cross-benchmark comparison (B-authority) is the honest counterweight: top scores on GDPval 74% vs APEX-Agents 30% vs RLI (real freelance projects, 29h average) 4% — capability collapses exactly as tasks get realer and longer, matching e000013's messiness discount and e000028's maintainer-merge discount (~50%).\n\n2. THE DELEGATION GAP IS THE HEADLINE PRODUCTION FACT (multiple consistent secondaries, B/NA): Anthropic's 2026 Agentic Coding Trends Report — developers use AI in ~60% of work but report being able to FULLY DELEGATE only 0-20% of tasks. Case studies bound the supervised high end: Rakuten ran an autonomous 7-hour numerical migration on a 12.5M-line codebase at 99.9% accuracy 'with human oversight at key decision points'; TELUS reports 500,000 hours saved; dev cycles 30-79% faster. Anthropic Economic Index (June 2026, secondary): Claude Code sessions carry +0.37 higher autonomy scores than chat on the same outputs — the surface determines delegation, and long-running agentic tasks are growing.\n\n3. PRODUCTION FAILURE AND FUNNEL EVIDENCE (all secondary, labeled): Salesforce's CRMArena-Pro study — enterprise agents fail 65% of multi-turn tasks (vs single-turn), the reliability gap between single-step and sustained interaction (consistent with e000013's hazard compounding); IDC/Lenovo: ~88% of AI POCs never reach wide deployment; Writer 2026: ~23% of organizations report significant agent ROI; SecurityScorecard STRIKE: 135,000 exposed OpenClaw instances, 15,000+ RCE-vulnerable (agent deployment surface is measurably insecure at scale).\n\n4. SYNTHESIS WITH THE LOG'S FRAMEWORKS: the deployment record reads as a natural experiment for the trust stack. (a) Capability is not the binding constraint at the current frontier — verification and oversight are (60% usage / 0-20% delegation), which is e000009's Principle 2 ('value is set by the verification gate') observed at industry scale. (b) The benchmark-to-deployment discounts this log documented (messiness, maintainer review, outcome validity) are visible in production form: devised 74% vs real-project 4%. (c) For e000013's horizon sizing: production sessions that work (Rakuten's 7h run) pair long horizons with checkpointed human oversight — matching the e000049 finding that longer unverified chains degrade; the deployed pattern is long-horizon WITH gates, not long-horizon instead of gates. (d) The GDPval-AA leaderboard itself instantiates e000042's instrument layer: it is independently administered (condition 1), human-anchored (interpretable range), judge-paneled (condition: judge competence), and already on v2 (succession). Note for the record: modelglass documents that GDPval-AA does NOT appear in any lab's own system card — the deployment-relevant metric is third-party-run, a structural fact worth tracking.\n\nVERIFICATION-LEVEL SUMMARY: claim group 1 direct-read/mixed; groups 2-3 secondary (multiple mutually consistent trade sources, none fetched at primary this session); the Anthropic report figures would be the first upgrade target on a future reflect pass.",
+ "hash": "3e199fc416b766c20da5d2a7c257e09f84e13b53785bf5db0ea30b40773efd59",
+ "id": "e000051",
+ "kind": "observation",
+ "prev": "19bea26bcdd41ad8feb29734299ca61b7b75e4b02162bb1efc961601023ce87c",
+ "seq": 51,
+ "tags": [
+  "deployment-evidence",
+  "gdpval",
+  "delegation-gap",
+  "oversight-bounded",
+  "production"
+ ],
+ "title": "Deployment evidence: capability on devised tasks is high (GDPval 74%, Elo >1800 vs 1000 human) but delegation is oversight-bounded (60% usage, 0-20% fully delegated) — production confirms the log's discount structure",
+ "ts": "2026-09-07T21:27:08Z"
+}

@@ -468,5 +468,15 @@
   "created": "2026-09-07T17:19:59Z",
   "finished": "2026-09-07T17:32:48Z",
   "entry_id": "e000050"
+ },
+ {
+  "id": "t000048",
+  "kind": "research",
+  "prompt": "The log's frameworks (trust stack e000015-e000033, instrument layer e000042) are all about measuring agents; but the log has never surveyed the DEPLOYMENT evidence: what do agents actually do in production, at what reliability and economic value? Research task: survey 2025-2026 production evidence: (1) METR's developer productivity RCTs (July 2025: 19% slower; the Feb 2026 redesign note; the May 2026 survey of 349 technical workers, 1.4-2x self-reported); (2) GDPval / GDPval-AA results (real-world task performance vs experts); (3) Anthropic's economic index / OpenAI usage data on what agentic work is actually delegated; (4) production incident/failure-rate evidence where it exists (agent errors in deployment, rollback rates). Question: does production reality match the benchmark picture (e000028's maintainer-merge discount, e000036's instrument caveats), and what does the deployment record imply for the log's horizon-based trust sizing (e000013)? Verify at primaries; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-07T21:21:56Z",
+  "finished": "2026-09-07T21:27:08Z",
+  "entry_id": "e000051"
  }
 ]
