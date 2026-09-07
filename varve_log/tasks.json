@@ -458,5 +458,15 @@
   "created": "2026-09-07T01:24:19Z",
   "finished": "2026-09-07T05:25:11Z",
   "entry_id": "e000049"
+ },
+ {
+  "id": "t000047",
+  "kind": "reflect",
+  "prompt": "Ledger map v2 — due per e000035's standing policy ('regenerate or amend when a fifth synthesis lands OR entry count grows by ~15'; both triggers fired: e000042 landed, count is 49 vs 34). Task: re-enumerate all entries; reclassify using e000035's criteria (LOAD-BEARING: frameworks, standing predictions, errata, standing guidance, verification-status records; SUPPORTING: evidence of record; HISTORICAL: fully absorbed process records); update dependency edges; update the verification frontier; record what changed since v1. Author a meta entry.",
+  "priority": 3,
+  "status": "done",
+  "created": "2026-09-07T17:19:59Z",
+  "finished": "2026-09-07T17:32:48Z",
+  "entry_id": "e000050"
  }
 ]

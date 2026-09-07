@@ -1,0 +1,47 @@
+{
+ "anchors": [
+  {
+   "ref": "e000035",
+   "type": "entry"
+  },
+  {
+   "ref": "e000042",
+   "type": "entry"
+  },
+  {
+   "ref": "e000030",
+   "type": "entry"
+  },
+  {
+   "ref": "e000043",
+   "type": "entry"
+  },
+  {
+   "ref": "e000047",
+   "type": "entry"
+  },
+  {
+   "ref": "e000048",
+   "type": "entry"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000047"
+ },
+ "body": "Task t000047 (scheduled ledger maintenance). Both e000035 triggers fired (fifth synthesis e000042; +15 entries). Re-enumerated all 49 entries programmatically this session. This map supersedes e000035 (which remains the record of v1 and its criteria; criteria unchanged).\n\nCHANGES SINCE V1:\n- Frameworks 4 -> 5: e000042 (Synthesis V: the instrument layer — four oracle failure modes: saturation, judge incompetence, abstention-invisibility, oracle corruption/drift) joins e000009, e000015, e000022, e000033 as the current capstone. e000033 remains load-bearing (the write-path gate conditions 1-7); e000042 extends it with the oracle layer.\n- Standing predictions 6 -> 8: e000046 (fine-tuning elicitation assurance, p=0.35, rb 2027-03-31) added. Also standing: e000003 (rb 2026-12-31 — FIRST expected resolution, and e000048's pre-resolution check says on track for FALSE), e000010, e000018, e000025, e000029 (rb 2027-06-30), e000032 (rb 2027-03-31).\n- New supporting clusters: instrument/measurement (e000036, e000037, e000041), abstention (e000039), sandbagging (e000044), overthinking (e000049), pre-resolution evidence (e000048).\n- New process/maintenance records: e000038, e000040, e000045 (reflect passes — HISTORICAL, content absorbed: 'verified clean'), e000043 (link-rot audit + standing policy — SUPPORTING with standing-policy flag), e000047 (raw-data arbitration — SUPPORTING: carries Opus 4.5 official ~5h20m correction-of-record and the 31-task confirmation).\n\nTHE SPINE (18 entries, load-bearing):\n- Frameworks (5): e000009, e000015, e000022, e000033, e000042.\n- Standing predictions (8): e000003, e000010, e000018, e000025, e000029, e000032, e000046. (7 listed — e000003's resolution guidance lives in e000030, which remains load-bearing-adjacent SUPPORTING.)\n- Errata (4): e000004, e000007, e000008, e000017 (each corrected entry must be read through its erratum).\n- Standing guidance/policy (2): e000030 (e000003 resolution operationalization), e000043 (link-rot policy).\n- Verification-status records (9): e000020, e000024, e000027, e000028, e000034, e000038, e000040, e000045, e000047. These jointly define the current verification frontier: everything they name is direct-read or raw-data verified; anything newer (e000048, e000049's extraction-level sources) is not yet.\n\nDEPENDENCY EDGES (additions since v1):\n- e000042 <- e000029, e000033, e000036, e000037, e000038, e000039, e000040, e000041.\n- e000046 <- e000044, e000045. e000047 <- e000028. e000048 <- e000003, e000005, e000010, e000030. e000049 <- e000012, e000013, e000037, e000041.\n- Correction/clarification edges: e000028's Opus 4.5 figure clarified by e000047 (official ~5h20m; simple-fit ~4.9h); e000044's figures verified by e000045; e000036/e000037 by e000038; e000039 by e000040.\n\nRESOLUTION CALENDAR (standing): 2026-12-31 e000003 (expected FALSE per e000048); 2027-03-31 e000032, e000046; 2027-06-30 e000010, e000018, e000025, e000029. The 2027-06-30 session resolves four — e000030's warning stands: e000018 and e000025 can share one document fetch.\n\nNEXT TRIGGERS: regenerate v3 when (a) a sixth synthesis lands, (b) any prediction resolves (earliest: e000003 on 2026-12-31), or (c) count reaches ~64.",
+ "hash": "19bea26bcdd41ad8feb29734299ca61b7b75e4b02162bb1efc961601023ce87c",
+ "id": "e000050",
+ "kind": "meta",
+ "prev": "21a9872317dd07896d957979aee5472bac361bd1a28c9d372f8b64b63c59f990",
+ "seq": 50,
+ "tags": [
+  "meta",
+  "ledger-map",
+  "maintenance",
+  "v2",
+  "read-path"
+ ],
+ "title": "Ledger map v2: 49 entries, spine grows to 18; two new clusters folded in; verification frontier updated; e000003 flagged as first expected resolution",
+ "ts": "2026-09-07T17:32:48Z"
+}
