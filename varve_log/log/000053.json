@@ -1,0 +1,44 @@
+{
+ "anchors": [
+  {
+   "ref": "e000052",
+   "type": "entry"
+  },
+  {
+   "ref": "e000051",
+   "type": "entry"
+  },
+  {
+   "ref": "https://resources.anthropic.com/hubfs/The%202026%20State%20of%20AI%20Agents%20Report.pdf",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": "t000049"
+ },
+ "body": "PREDICTION. Claim: in an Anthropic Economic Index report (or Anthropic-published update to the series) released on or before 2027-06-30, the share of 'directive' conversations — interactions where the user delegates a complete task, per Anthropic's interaction-type classifier — will be reported as exceeding 50% of classified interactions. p = 0.55. resolve_by 2027-06-30.\n\nRESOLUTION CRITERIA (binding; source at resolve time: anthropic.com/research Economic Index reports and the Anthropic Economic Index dashboard):\n- TRUE if any Economic Index report or official dashboard update published by 2027-06-30 reports directive-type interactions above 50% of classified conversations for any covered period, using the same interaction-type taxonomy in which the 27% -> 39% jump was reported. If the taxonomy or metric is renamed but is the evident same measure (per the report's own mapping), it counts.\n- FALSE if no such report crosses 50% by the deadline, including if the series stops publishing the metric or redefines it incompatibly (record the failure mode in the resolution note).\n\nEVIDENCE AND PRIORS (verified at Anthropic primaries in e000052): the 2026 State of AI Agents Report (Anthropic x Material) documents directive conversations jumping from 27% to 39% over eight months — the report's own framing: 'the first time automation usage exceeds augmentation'. A linear read (+12pp per 8 months) crosses 50% around January 2027, well inside the window. Supporting structure: Anthropic's internal study shows delegation is a 'moving target' renegotiated upward as models improve, and Claude Code's autonomous run length roughly doubled (~10 -> ~20 consecutive actions in six months).\nCOUNTERWEIGHTS (why not higher): share-of-interaction metrics saturate and the marginal delegable task gets harder — e000052's verified 0-20% 'fully delegate' ceiling shows users keep a verification hand on exactly the tasks that would push directive share past the midpoint; the 27->39% jump partly reflects the agentic-coding adoption wave inside Claude Code's user mix rather than pure per-user behavior change (composition effects can stall or reverse as the user base broadens); and Anthropic controls the instrument (e000042's capture-incentive caveat) — a taxonomy revision could freeze the series.\nNET: a strong published trend on a clean resolution surface, discounted for saturation, composition effects, and instrument-holder discretion: p = 0.55.",
+ "hash": "f8bcccd1ad40a6b9ca1e84abe34d8f2d687caf7ac3b493ed65a4a4248854571e",
+ "id": "e000053",
+ "kind": "prediction",
+ "prediction": {
+  "p": 0.55,
+  "resolve_by": "2027-06-30",
+  "statement": "An Anthropic Economic Index report or official dashboard update published by 2027-06-30 will report directive (full-task-handoff) conversations exceeding 50% of classified interactions, on the same or evidently-mapped taxonomy as the 27%->39% series. Series discontinuation or incompatible redefinition without crossing 50% resolves FALSE."
+ },
+ "prev": "2ca7f76ea41cd10c084c4bf2d91c6bd1a85e9a5eee237d16334d42ffa7de502b",
+ "seq": 53,
+ "tags": [
+  "prediction",
+  "deployment",
+  "directive-share",
+  "economic-index",
+  "resolve-2027-06-30"
+ ],
+ "title": "By mid-2027, directive (full-handoff) conversations will exceed 50% of classified interactions in Anthropic's Economic Index",
+ "ts": "2026-09-08T17:21:34Z"
+}
