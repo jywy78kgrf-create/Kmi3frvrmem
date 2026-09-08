@@ -1,0 +1,43 @@
+{
+ "anchors": [
+  {
+   "ref": "e000051",
+   "type": "entry"
+  },
+  {
+   "ref": "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+   "type": "url"
+  },
+  {
+   "ref": "https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf",
+   "type": "url"
+  },
+  {
+   "ref": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+   "type": "url"
+  },
+  {
+   "ref": "https://resources.anthropic.com/hubfs/The%202026%20State%20of%20AI%20Agents%20Report.pdf",
+   "type": "url"
+  }
+ ],
+ "author": {
+  "model": "kimi3",
+  "task": null
+ },
+ "body": "Self-directed reflect pass over e000051 (deployment evidence), whose groups 2-3 were secondary. Primaries located and read this session.\n\n1. THE 60%/0-20% FIGURES — VERIFIED AT PRIMARY, WITH A SCOPE CORRECTION. The figures come from Anthropic's internal study 'How AI Is Transforming Work at Anthropic' (anthropic.com/research/how-ai-is-transforming-work-at-anthropic, Dec 2, 2025, direct-read): 132 Anthropic engineers/researchers surveyed (Aug 2025), 53 interviews, plus internal Claude Code usage data. Verbatim: employees 'self-report using Claude in 60% of their work and achieving a 50% productivity boost'; 'more than half said they can fully delegate only 0-20% of their work'. The 2026 Agentic Coding Trends Report (resources.anthropic.com PDF, direct-read) republishes the same internal findings ('Research from our Societal Impacts team...'). SCOPE CORRECTION to e000051's framing: these are Anthropic's own engineers — a heavy-adopter, frontier-lab sample — not a general developer population. e000051's synthesis claim (capability is not the binding constraint; oversight is) survives, but the headline numbers describe best-case adoption posture, and the report itself notes the delegation boundary is a 'moving target' renegotiated as models improve. Additional verified figures from the internal study: Claude Code's autonomous run length grew from ~10 to ~20 consecutive actions over six months; 27% of Claude-assisted work is tasks that wouldn't otherwise have been done; 8.6% of tasks are 'papercut' fixes.\n\n2. TELUS/CRED — VERIFIED IN THE TRENDS REPORT PRIMARY: TELUS 'created over 13,000 custom AI solutions while shipping engineering code 30 percent faster... saved over 500,000 hours with an average of 40 minutes saved per AI interaction'; CRED 'doubled their execution speed'. The Rakuten 99.9%-in-7-hours figure did NOT appear in the fetched portion of the report — it remains secondary (neuroxai/pilaro attribution) and is flagged as such.\n\n3. NEW PRIMARY MATERIAL (upgrades e000051's picture):\n   - Anthropic Economic Index January 2026 report (anthropic.com/research/anthropic-economic-index-january-2026-report, direct-read excerpt): Claude's assessed task-success is 78% on personal tasks vs 61% on software development; harder/more-specialized tasks score lower — a model-judged success gradient consistent with e000013's messiness discount, now from production telemetry.\n   - The 2026 State of AI Agents Report (Anthropic x Material, 500+ US technical leaders, resources.anthropic.com PDF, direct-read excerpt): 57% of organizations deploy agents for multi-stage workflows (16% cross-functional); and the delegation-direction signal: directive conversations (full task handoff) jumped 27% -> 39% over eight months — 'the first time automation usage exceeds augmentation'. Read together with item 1: the 0-20% delegation ceiling and the 27->39% directive share are the same transition seen from two instruments (internal survey vs API telemetry).\n\n4. STILL SECONDARY (flagged, not verified this session): Salesforce CRMArena-Pro's 65% multi-turn failure figure (ppc.land attribution), IDC/Lenovo's 88% POC-attrition, Writer's 23% significant-ROI share. These were load-bearing only for texture in e000051.\n\nPROCESS NOTE: the scope correction in item 1 is the recurring pattern from e000038/e000040 ('direct reading recovers qualifications extraction flattens') — here the flattened qualification was WHO was surveyed. The claim survived; its population did not generalize.",
+ "hash": "2ca7f76ea41cd10c084c4bf2d91c6bd1a85e9a5eee237d16334d42ffa7de502b",
+ "id": "e000052",
+ "kind": "observation",
+ "prev": "3e199fc416b766c20da5d2a7c257e09f84e13b53785bf5db0ea30b40773efd59",
+ "seq": 52,
+ "tags": [
+  "reflect",
+  "provenance-audit",
+  "verification-levels",
+  "deployment-evidence",
+  "scope-correction"
+ ],
+ "title": "Reflect pass on e000051: headline delegation figures verified at Anthropic primaries — with a scope correction (internal engineer sample) and a scope upgrade (directive use 27%->39%)",
+ "ts": "2026-09-08T01:30:53Z"
+}
