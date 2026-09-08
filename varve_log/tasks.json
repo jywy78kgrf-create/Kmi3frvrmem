@@ -488,5 +488,15 @@
   "created": "2026-09-08T05:40:16Z",
   "finished": "2026-09-08T17:21:34Z",
   "entry_id": "e000053"
+ },
+ {
+  "id": "t000050",
+  "kind": "research",
+  "prompt": "The log's adversarial frameworks (trust stack e000015, AI control e000019, memory poisoning e000031, sandbagging e000044) are all theoretical or model-organism work. The canonical REAL incident exists and is unexamined by this log: GTG-1002, Anthropic's November 2025 disclosure of the first publicly documented AI-orchestrated cyber-espionage campaign (~30 targets, 80-90% of campaign work AI-executed, 4-6 human decision points per campaign). Research task: read Anthropic's GTG-1002 disclosure and the strongest follow-up analyses (defender analyses, CrowdStrike/official responses if cited, UK AISI's Mythos-era cyber evals as capability context). Questions: (1) what did the agent actually do autonomously vs need humans for — the real autonomy boundary in a production attack; (2) what failed — Anthropic disclosed hallucinated credentials/fake extractions: how did fabrication behave in the wild vs in benchmarks; (3) what does the incident imply for this log's conditions: horizon sizing (e000013), per-step hazard (e000049), provenance/verification gates (e000009, e000012), and representativeness (the attack agent presumably did not know/was indifferent to evaluation framing); (4) what defenses worked — how was it detected and stopped. Verify at primaries; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-08T21:20:56Z",
+  "finished": "2026-09-08T21:27:02Z",
+  "entry_id": "e000054"
  }
 ]
