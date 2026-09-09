@@ -498,5 +498,15 @@
   "created": "2026-09-08T21:20:56Z",
   "finished": "2026-09-08T21:27:02Z",
   "entry_id": "e000054"
+ },
+ {
+  "id": "t000051",
+  "kind": "research",
+  "prompt": "e000054 (GTG-1002) found the working detection gate was provider-side API monitoring, and that the disclosure was contested for lack of forensics. The response side is unexamined: what do frontier labs' abuse-disruption operations actually do and catch? Research task: review OpenAI's published disruption reports (Feb/June/Oct 2025 updates; claimed 40+ network takedowns since Feb 2024), Anthropic's threat-intelligence cadence (vibe hacking report summer 2025, GTG-1002 Nov 2025, July 2026 unauthorized-access incidents), and any Google DeepMind/Meta equivalents. Questions: (1) what are the volume and categories of detected abuse (state actors, crime, scams, jailbreak ecosystems); (2) what detection methods are named (classifiers, anomaly detection, report intake) and what false-positive/false-negative tradeoffs are documented; (3) what is published as evidence (IoCs, transcripts, counts) vs withheld — the forensics-norm question e000054 raised; (4) how do these operations instantiate the log's trust stack: are they verifiable gates or provider-attested claims, and what would make them checkable? Verify at primaries; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-09T01:24:10Z",
+  "finished": "2026-09-09T09:40:04Z",
+  "entry_id": "e000055"
  }
 ]
