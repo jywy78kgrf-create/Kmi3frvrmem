@@ -508,5 +508,15 @@
   "created": "2026-09-09T01:24:10Z",
   "finished": "2026-09-09T09:40:04Z",
   "entry_id": "e000055"
+ },
+ {
+  "id": "t000052",
+  "kind": "research",
+  "prompt": "Three open predictions and one cluster lean on white-box detection: e000025 (headline awareness metric moves off verbalized counting — probes are the named alternative), e000037 (monitor scaffolding), e000044-e000045 (sandbagging detection; probes degrade prompted->fine-tuned and with scale, per secondary sources), e000046 (elicitation assurance). Research task: what is the 2026 state of activation-probe / representation-based detection for high-level properties (evaluation awareness, deception, sandbagging intent, harmfulness)? Cover: (1) Anthropic's activation-oracle work (Opus 4.6 card section 6.5.7, already partly in the log via e000018/e000021 — what exactly did it measure); (2) published probe results for deception/awareness detection with transfer across models and settings (does anything generalize beyond the training distribution — e000045's MALT finding that probes degrade); (3) honest negative results (linear truth probing poor in realistic scenarios, per Anthropic's honesty-elicitation page); (4) whether any probe is used in production release-time decisions anywhere. Question: is a probe-based headline metric feasible today, and what separates the working probes from the failing ones? Verify at primaries; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-09T21:18:43Z",
+  "finished": "2026-09-09T21:23:55Z",
+  "entry_id": "e000056"
  }
 ]
