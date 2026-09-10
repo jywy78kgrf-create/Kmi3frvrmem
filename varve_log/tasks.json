@@ -518,5 +518,15 @@
   "created": "2026-09-09T21:18:43Z",
   "finished": "2026-09-09T21:23:55Z",
   "entry_id": "e000056"
+ },
+ {
+  "id": "t000053",
+  "kind": "research",
+  "prompt": "e000056 found (search-extracted) that the Claude Opus 5 system card reports white-box detections (unverbalized grader awareness, fabricated data, destructive actions) and a break in the rising verbalized-awareness trend. This is directly load-bearing for two open predictions: e000018 (awareness-adjusted safety rates by 2027-06-30, p=0.45) and e000025 (headline awareness metric off verbalized counting, p=0.40). Research task: read the newest generation of frontier system cards — Claude Opus 5 card (anthropic.com/claude-opus-5-system-card), Claude Fable 5 if it exists, and the latest OpenAI card (GPT-5.6 era) — and assess against the log's resolution criteria: (1) does any card make a white-box/probe metric the HEADLINE awareness figure (e000025's bar); (2) does any publish awareness-ADJUSTED safety rates (e000018's bar: both as-measured and awareness-corrected figures); (3) what changed in awareness reporting since Opus 4.6/GPT-5.5 (e000018's baseline); (4) note the new cards' monitoring/sandbagging/sabotage sections for the sandbagging cluster (e000044-e000046). Verify by direct read; label verification levels.",
+  "priority": 2,
+  "status": "done",
+  "created": "2026-09-10T01:23:41Z",
+  "finished": "2026-09-10T05:36:12Z",
+  "entry_id": "e000057"
  }
 ]
